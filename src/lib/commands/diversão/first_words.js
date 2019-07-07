@@ -2,8 +2,8 @@ const Jimp = require('jimp');
 
 module.exports = {
     run: async(msg) => {
-        if (!msg.args.join(' ')) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, você precisa digitas as primeiras palavras do bebê.`);
-        if (!msg.args.join(' ').length > 50) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, você ultrapassou o limite de 50 caracteres`);
+        if (!msg.args.join(' ')) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, você precisa digitar as primeiras palavras do bebê.`);
+        if (!msg.args.join(' ').length > 50) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, você ultrapassou o limite de 50 caracteres.`);
         msg.channel.startTyping()
         Jimp.read('http://i.imgur.com/xXUtLqH.png', (err, image) => {
             if (err) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, ocorreu um erro ao gerar a imagem, tente novamente mais tarde.`);

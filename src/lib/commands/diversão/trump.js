@@ -11,7 +11,7 @@ module.exports = {
                 msg.channel.send({
                     embed: {
                         color: msg.config.colors.padrão,
-                        description: `${msg.config.e_men._trump} \`|\` Donal Trump, tornou ${msg.args[0]} ilegal.`,
+                        description: `<:trump_:587665862916440065> \`|\` Donal Trump, tornou ${msg.args[0]} ilegal.`,
                         image: ilegal_gif,
                         footer:{
                             icon_url: msg.author.displayAvatarURL,

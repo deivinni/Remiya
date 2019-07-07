@@ -11,6 +11,7 @@ module.exports = {
             const embed = new RichEmbed()
             .setColor('ORANGE')
             .setAuthor(`Reddit: ${search}`, 'https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-114x114.png')
+            .setDescription(`Reaja em ${msg.config.e_men.reload_2} para trocar a imagem.`)
             if (!image) {
                 return msg.channel.send(
                     embed
@@ -19,20 +20,24 @@ module.exports = {
                 );
             } else {
                 await msg.channel.send(embed.setImage(image)).then(message => {
-                    message.react(msg.config.e_id.seta_2)
-                    const collector = message.createReactionCollector((r ,u) => (u.id != msg.bot.user.id && u.id == msg.author.id) && (r.emoji.id == msg.config.e_id.seta_2), {time:3*60*1000});
+                    message.react(msg.config.e_id.reload_2)
+                    const collector = message.createReactionCollector((r ,u) => (u.id != msg.bot.user.id && u.id == msg.author.id) && (r.emoji.id == msg.config.e_id.reload_2), {time:3*60*1000});
                     collector.on('collect', async (r) => {
                         switch (r.emoji.id) {
-                            case msg.config.e_id.seta_2:
+                            case msg.config.e_id.reload_2:
                                 let new_image = await reddit(search);
                                 r.remove(msg.author.id)
                                 await message.edit(embed.setImage(new_image));
                             break;
-                        };
-                    });
-                });
-            };
-        };
+                        }
+                    })
+                    setTimeout(() => {
+                        message.clearReactions();
+                        message.edit(embed.setDescription(''));
+                    }, 3*60*1000)
+                })
+            }
+        }
     },
     conf:{
         aliases: [],

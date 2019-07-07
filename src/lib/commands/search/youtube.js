@@ -2,6 +2,7 @@ const moment = require('moment');
 const { RichEmbed } = require('discord.js');
 const youtube = new (require('simple-youtube-api'))(process.env.YOUTUBE_KEY);
 const { stripIndents } = require('common-tags');
+
 module.exports = {
     run: async(msg) => {
         if (!msg.args[0]) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, coloque algo que deseje pesquisar.`);

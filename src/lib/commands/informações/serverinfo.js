@@ -39,7 +39,7 @@ module.exports = {
                 ${msg.config.e_men._seta} Bots: ${bots}
                 ${msg.config.e_men._seta} Canais de texto: ${canais_texto}
                 ${msg.config.e_men._seta} Canais de voz: ${canais_voz}
-                ${msg.config.e_men._seta} Cargos: \`${msg.config.prefix}serverinfo --cargos\` para ver todos os cargos
+                ${msg.config.e_men._seta} Cargos: \`${msg.config.prefix}serverinfo --cargos\` para ver todos os cargos.
                 `)
             )
         }

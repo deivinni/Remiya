@@ -44,11 +44,11 @@ module.exports = {
                 .addField(`${msg.config.e_men._info} | Informações principais`, stripIndents`
                 ${msg.config.e_men._seta} Nome: ${usuario.username} - \`${usuario.id}\`
                 ${msg.config.e_men._seta} Status: ${user_status}
-                ${msg.config.e_men._seta} Jogando: ${usuario.presence.game ? usuario.presence.game.name : 'jogando nada no momento'}
+                ${msg.config.e_men._seta} Jogando: ${usuario.presence.game ? usuario.presence.game.name : '<:offline_:587101313243021322>'}
                 ${msg.config.e_men._seta} Criado: ${moment(usuario.createdAt).format('LLLL')}
                 `)
                 .addField(`${msg.config.e_men._seta} | Informações no servidor`, stripIndents`
-                ${msg.config.e_men._seta} Apelido: ${usuario.nickname || 'sem apelido'}
+                ${msg.config.e_men._seta} Apelido: ${usuario.nickname || usuario.username}
                 ${msg.config.e_men._seta} Entrou: ${moment(msg.guild.member(usuario).joinedAt).format('LLLL')}
                 ${msg.config.e_men._seta} Administrador: ${adm}
                 ${msg.config.e_men._seta} Cargos: ${cargos}`)

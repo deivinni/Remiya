@@ -9,5 +9,4 @@ module.exports = (bot, guild) => {
             url: 'https://www.twitch.tv/deivinni_'
         }
     })
-    //require('firebase').database().ref(`Guilds/${guild.id}`).remove();
 }

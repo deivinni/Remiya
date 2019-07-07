@@ -3,7 +3,7 @@ const cheerio = require('cheerio');
 
 module.exports = {
     run: async(msg) => {
-        if (!msg.args.join(' ')) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, digite algo que queir pesquisar.`);
+        if (!msg.args.join(' ')) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, digite algo que queira pesquisar.`);
         let response = await request({
             headers: {
               'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:68.0) Gecko/20100101 Firefox/68.0'

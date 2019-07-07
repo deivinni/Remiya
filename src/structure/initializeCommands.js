@@ -1,6 +1,6 @@
 const { readdirSync } = require('fs')
 
-module.exports = (bot, paths=['informações','owner','utilidades','imagens','nsfw','diversão','search']) => {
+module.exports = (bot, paths=['informações','owner','utilidades','imagens','nsfw','diversão','search','moderação']) => {
     paths.forEach(path => {
         const commands = readdirSync(`./src/lib/commands/${path}/`).filter(x => x.endsWith('.js'));
         for (const file of commands) {
