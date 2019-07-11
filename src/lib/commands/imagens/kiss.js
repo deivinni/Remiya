@@ -27,13 +27,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 3,
-        helper: {
-            name: 'kiss',
-            description: 'beija alguém do servidor',
-            usage: ['kiss @usuário'],
-            member: 'usuários',
-            category: 'imagens'
-        }
+        cooldown: 3
+    },
+    help: {
+        name: 'kiss',
+        description: 'beija alguém do servidor',
+        usage: ['kiss @usuário'],
+        member: 'usuários',
+        category: 'imagens'
     }
 }

@@ -11,17 +11,17 @@ module.exports = {
         nsfw: false,
         guildOnly: false,
         ownerOnly: false,
-        manu: true,
+        manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 3,
-        helper: {
-            name: 'undead',
-            description: 'ative o audio de alguma pessoa',
-            usage: ['undeaf <usuário>'],
-            member: 'moderadores',
-            category: 'moderação'
-        }
+        cooldown: 3
+    },
+    help: {
+        name: 'undeaf',
+        description: 'ative o audio de alguma pessoa',
+        usage: ['undeaf @usuário'],
+        member: 'moderadores',
+        category: 'moderação'
     }
 }
 

@@ -46,13 +46,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 10,
-        helper: {
-            name: 'wikipédia',
-            description: 'pesquise algo no wikipédia',
-            usage: ['wikipédia <pesquisa>'],
-            member: 'usuários',
-            category: 'search'
-        }
+        cooldown: 10
+    },
+    help: {
+        name: 'wikipédia',
+        description: 'pesquise algo no wikipédia',
+        usage: ['wikipédia <pesquisa>'],
+        member: 'usuários',
+        category: 'search'
     }
 }

@@ -13,7 +13,7 @@ module.exports = {
         preto: 0x000000,
         branco: 0xffffff,
         amarelo: 0xf0f72a,
-        vermelho: 0xcf72e2e,
+        vermelho: 0xdb5e5e,
         verde: 0x2df74c,
         azul: 0x2d3df7
     }

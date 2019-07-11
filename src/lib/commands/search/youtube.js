@@ -36,13 +36,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 10,
-        helper: {
-            name: 'youtube',
-            description: 'pesquise um vídeo no youtube',
-            usage: ['youtube <nome de vídeo>'],
-            member: 'usuários',
-            category: 'search'
-        }
+        cooldown: 10
+    },
+    help: {
+        name: 'youtube',
+        description: 'pesquise um vídeo no youtube',
+        usage: ['youtube <nome de vídeo>'],
+        member: 'usuários',
+        category: 'search'
     }
 }

@@ -13,76 +13,76 @@ module.exports = {
                 thumbnail: {url: `https://dummyimage.com/250/${color_font}/&text=%20`},
                 fields: [
                     {
-                      name: 'HEX',
-                      value: `#${color_font}`,
-                      inline: true
+                        name: 'HEX',
+                        value: `#${color_font}`,
+                        inline: true
                     },
                     {
-                      name: 'RGB',
-                      value: `${convert.hex.rgb(color_font)}`,
-                      inline: true
+                        name: 'RGB',
+                        value: `${convert.hex.rgb(color_font)}`,
+                        inline: true
                     },
                     {
-                      name: 'CMYK',
-                      value: `${convert.hex.cmyk(color_font)}`,
-                      inline: true
+                        name: 'CMYK',
+                        value: `${convert.hex.cmyk(color_font)}`,
+                        inline: true
                     },
                     {
-                      name: 'HSL',
-                      value: `${convert.hex.hsl(color_font)}`,
-                      inline: true
+                        name: 'HSL',
+                        value: `${convert.hex.hsl(color_font)}`,
+                        inline: true
                     },
                     {
-                      name: 'HSV',
-                      value: `${convert.hex.hsv(color_font)}`,
-                      inline: true
+                        name: 'HSV',
+                        value: `${convert.hex.hsv(color_font)}`,
+                        inline: true
                     },
                     {
-                      name: 'HWB',
-                      value: `${convert.hex.hwb(color_font)}`,
-                      inline: true
+                        name: 'HWB',
+                        value: `${convert.hex.hwb(color_font)}`,
+                        inline: true
                     },
                     {
-                      name: 'LAB',
-                      value: `${convert.hex.lab(color_font)}`,
-                      inline: true
+                        name: 'LAB',
+                        value: `${convert.hex.lab(color_font)}`,
+                        inline: true
                     },
                     {
-                      name: 'ANSI16',
-                      value: `${convert.hex.ansi16(color_font)}`,
-                      inline: true
+                        name: 'ANSI16',
+                        value: `${convert.hex.ansi16(color_font)}`,
+                        inline: true
                     },
                     {
-                      name: 'ANSI256',
-                      value: `${convert.hex.ansi256(color_font)}`,
-                      inline: true
+                        name: 'ANSI256',
+                        value: `${convert.hex.ansi256(color_font)}`,
+                        inline: true
                     },
                     {
-                      name: 'XYZ',
-                      value: `${convert.hex.xyz(color_font)}`,
-                      inline: true
+                        name: 'XYZ',
+                        value: `${convert.hex.xyz(color_font)}`,
+                        inline: true
                     },
                     {
-                      name: 'HCG',
-                      value: `${convert.hex.hcg(color_font)}`,
-                      inline: true
+                        name: 'HCG',
+                        value: `${convert.hex.hcg(color_font)}`,
+                        inline: true
                     },
                     {
-                      name: 'Apple',
-                      value: `${convert.hex.apple(color_font)}`,
-                      inline: true
+                        name: 'Apple',
+                        value: `${convert.hex.apple(color_font)}`,
+                        inline: true
                     },
                     {
-                      name: 'Gray',
-                      value: `${convert.hex.gray(color_font)}`,
-                      inline: true
+                        name: 'Gray',
+                        value: `${convert.hex.gray(color_font)}`,
+                        inline: true
                     },
                     {
-                      name: 'CSS',
-                      value: `${convert.hex.keyword(color_font)}`,
-                      inline: true
+                        name: 'CSS',
+                        value: `${convert.hex.keyword(color_font)}`,
+                        inline: true
                     }
-                  ],
+                ],
                 footer:{
                     icon_url: msg.author.displayAvatarURL,
                     text: msg.author.tag
@@ -96,16 +96,16 @@ module.exports = {
         nsfw: false,
         guildOnly: false,
         ownerOnly: false,
-        manu: true,
+        manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 5,
-        helper: {
-            name: 'colors',
-            description: 'veja as informações de uma cor',
-            usage: ['colors #cor','colors --random'],
-            member: 'usuários',
-            category: 'utilidades'
-        }
+        cooldown: 5
+    },
+    help: {
+        name: 'colors',
+        description: 'veja as informações de uma cor',
+        usage: ['colors #cor','colors --random'],
+        member: 'usuários',
+        category: 'utilidades'
     }
 }

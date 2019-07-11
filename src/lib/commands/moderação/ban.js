@@ -14,14 +14,14 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 60,
-        helper: {
-            name: 'ban',
-            description: 'faça algum banimento no servidor.',
-            usage: ['ban <usuário>'],
-            member: 'moderadores',
-            category: 'moderação'
-        }
+        cooldown: 60
+    },
+    help: {
+        name: 'ban',
+        description: 'faça algum banimento no servidor.',
+        usage: ['ban @usuário'],
+        member: 'moderadores',
+        category: 'moderação'
     }
 }
 

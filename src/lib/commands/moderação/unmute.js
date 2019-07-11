@@ -11,17 +11,17 @@ module.exports = {
         nsfw: false,
         guildOnly: false,
         ownerOnly: false,
-        manu: true,
+        manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 3,
-        helper: {
-            name: 'unmute',
-            description: 'desmute alguém do servidor.',
-            usage: ['unmute <usuário>'],
-            member: 'moderadores',
-            category: 'moderação'
-        }
+        cooldown: 3
+    },
+    help: {
+        name: 'unmute',
+        description: 'desmute alguém do servidor.',
+        usage: ['unmute @usuário'],
+        member: 'moderadores',
+        category: 'moderação'
     }
 }
 

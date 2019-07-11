@@ -3,7 +3,7 @@ const { prefix } = require('../../util/config')
 module.exports = (bot) => {
     bot.user.setPresence({
         game:{
-            name:`${prefix}help | ${bot.users.size - bot.guilds.size} usuários!`,
+            name:`${prefix}ajuda | ${bot.users.size - bot.guilds.size} usuários!`,
             type: 'STREAMING',
             url: 'https://www.twitch.tv/deivinni_'
         }

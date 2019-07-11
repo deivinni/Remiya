@@ -41,13 +41,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 60,
-        helper: {
-            name: 'pussy',
-            description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
-            usage: ['pussy','pussy --gif', 'pussy --art', 'pussy --wank'],
-            member: 'usuários',
-            category: 'nsfw'
-        }
+        cooldown: 60
+    },
+    help: {
+        name: 'pussy',
+        description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
+        usage: ['pussy','pussy --gif', 'pussy --art', 'pussy --wank'],
+        member: 'usuários',
+        category: 'nsfw'
     }
 }

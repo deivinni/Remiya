@@ -4,11 +4,11 @@ module.exports = async function (bot, msg){
     if (!msg.author.bot) {
         if (!msg.content.startsWith(config.prefix)) {
             if (msg.content.startsWith('<@577134698325606400>')) 
-                return msg.channel.send(`${config.e_men.bot_mention} \`|\` ${msg.author}, meu prefixo é \`${config.prefix}\`, para saber meus comandos use \`${config.prefix}help\`.`);
+                return msg.channel.send(`${config.e_men.bot_mention} \`|\` ${msg.author}, meu prefixo é \`${config.prefix}\`, para saber meus comandos use \`${config.prefix}ajuda\`.`);
         } else {
             const args = msg.content.slice(config.prefix.length).trim().split(/\s+/g);
             const comando = args.shift().toLowerCase();
-            const cmd = bot.commands.get(comando || bot.aliases.get(comando));
+            const cmd = bot.commands.get(comando) || bot.commands.get(bot.aliases.get(comando));
             Object.defineProperties(msg,{
                 'args':    {value: args},
                 'bot':     {value: bot},
@@ -30,9 +30,9 @@ module.exports = async function (bot, msg){
                     return msg.channel.send(`${config.e_men.desativado} \`|\` ${msg.author}, este comando esta desabilitado.`);
                 else if ((cmd.conf.nsfw && !msg.channel.nsfw) && (cmd.conf.nsfw && msg.channel.type != 'dm'))
                     return msg.channel.send(`🔞 \`|\` ${msg.author}, você deve estar um chat \`NSFW\` para usar este comando.`);
-                else if (!bot.cooldowns.get(cmd.conf.helper.name)) bot.cooldowns.set(cmd.conf.helper.name, new (require('discord.js').Collection)());
+                else if (!bot.cooldowns.get(cmd.help.name)) bot.cooldowns.set(cmd.help.name, new (require('discord.js').Collection)());
                 const now = Date.now();
-                const timestamps = bot.cooldowns.get(cmd.conf.helper.name);
+                const timestamps = bot.cooldowns.get(cmd.help.name);
                 const cooldownAmount = (cmd.conf.cooldown || 3) * 1000;
                 if (timestamps.has(msg.author.id)) {
                     const expirationTime = timestamps.get(msg.author.id) + cooldownAmount;

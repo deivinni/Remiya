@@ -35,13 +35,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: false,
-        cooldown: 3,
-        helper: {
-            name: 'eval',
-            description: 'um terminal no discord \'-\'',
-            member: 'criador',
-            usage: ['eval <código>'],
-            category: 'owner',
-        }
+        cooldown: 3
+    },
+    help: {
+        name: 'eval',
+        description: 'um terminal no discord \'-\'',
+        member: 'criador',
+        usage: ['eval <código>'],
+        category: 'owner',
     }
 }

@@ -16,13 +16,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: false,
-        cowldoon: 3,
-        helper: {
-            name: 'caio',
-            description: 'manda o caio toma no cu',
-            usage: ['caio'],
-            member: 'HPBGalactico',
-            category: 'diversão'
-        }
+        cowldoon: 3
+    },
+    help: {
+        name: 'caio',
+        description: 'manda o caio toma no cu',
+        usage: ['caio'],
+        member: 'HPBGalactico',
+        category: 'diversão'
     }
 }

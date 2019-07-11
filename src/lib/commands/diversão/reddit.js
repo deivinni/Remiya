@@ -47,13 +47,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 3,
-        helper: {
-            name: 'reddit',
-            description: 'pesquise por imagens no reddit',
-            usage: ['reddit <SubReddit>'],
-            member: 'usuários',
-            category: 'diversão'
-        }
+        cooldown: 3
+    },
+    help: {
+        name: 'reddit',
+        description: 'pesquise por imagens no reddit',
+        usage: ['reddit <SubReddit>'],
+        member: 'usuários',
+        category: 'diversão'
     }
 }

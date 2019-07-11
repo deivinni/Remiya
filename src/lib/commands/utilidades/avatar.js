@@ -21,13 +21,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 5,
-        helper: {
-            name: 'avatar',
-            description: 'veja o avatar de alguém do servidor',
-            usage: ['avatar', 'avatar @usuário'],
-            category: 'utilidades',
-            member: 'usuários'
-        }
+        cooldown: 5
+    },
+    help: {
+        name: 'avatar',
+        description: 'veja o avatar de alguém do servidor',
+        usage: ['avatar', 'avatar @usuário'],
+        category: 'utilidades',
+        member: 'usuários'
     }
 }

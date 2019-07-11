@@ -39,13 +39,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 60,
-        helper: {
-            name: 'neko',
-            description: 'veja umas imagens de nekos',
-            usage: ['neko','neko --gif'],
-            member: 'usuários',
-            category: 'imagens'
-        }
+        cooldown: 60
+    },
+    help: {
+        name: 'neko',
+        description: 'veja umas imagens de nekos',
+        usage: ['neko','neko --gif'],
+        member: 'usuários',
+        category: 'imagens'
     }
 }

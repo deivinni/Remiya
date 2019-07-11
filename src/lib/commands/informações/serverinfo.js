@@ -52,13 +52,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 3,
-        helper:{
-            name: 'serverinfo',
-            description: 'veja as informações do servidor',
-            usage: ['serverinfo','serverinfo --cargos'],
-            member: 'usuários',
-            category: 'informações'
-        }
+        cooldown: 3
+    },
+    help:{
+        name: 'serverinfo',
+        description: 'veja as informações do servidor',
+        usage: ['serverinfo','serverinfo --cargos'],
+        member: 'usuários',
+        category: 'informações'
     }
 }

@@ -39,13 +39,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 60,
-        helper: {
-            name: 'boobs',
-            description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
-            usage: ['boobs', 'boobs --gif'],
-            member: 'usuários',
-            category: 'nsfw'
-        }
+        cooldown: 60
+    },
+    help: {
+        name: 'boobs',
+        description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
+        usage: ['boobs', 'boobs --gif'],
+        member: 'usuários',
+        category: 'nsfw'
     }
 }

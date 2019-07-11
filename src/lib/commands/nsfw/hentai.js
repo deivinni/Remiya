@@ -39,13 +39,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 60,
-        helper: {
-            name: 'hentai',
-            description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
-            usage: ['hentai','hentai --gif'],
-            member: 'usuários',
-            category: 'nsfw'
-        }
+        cooldown: 60
+    },
+    help: {
+        name: 'hentai',
+        description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
+        usage: ['hentai','hentai --gif'],
+        member: 'usuários',
+        category: 'nsfw'
     }
 }

@@ -41,13 +41,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 8,
-        helper: {
-            name: 'traduzir',
-            description: 'traduza alguma mensagem',
-            usage: ['traduzir <língua para traduzir> <mensagem>'],
-            member: 'usuários',
-            category: 'utilidades'
-        }
+        cooldown: 8
+    },
+    help: {
+        name: 'traduzir',
+        description: 'traduza alguma mensagem',
+        usage: ['traduzir <língua para traduzir> <mensagem>'],
+        member: 'usuários',
+        category: 'utilidades'
     }
 }

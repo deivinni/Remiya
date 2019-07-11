@@ -11,17 +11,17 @@ module.exports = {
         nsfw: false,
         guildOnly: false,
         ownerOnly: false,
-        manu: true,
+        manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 60,
-        helper: {
-            name: 'kick',
-            description: 'expulse alguém do servidor.',
-            usage: ['kick <usuário>'],
-            member: 'moderadores',
-            category: 'moderação'
-        }
+        cooldown: 60
+    },
+    help: {
+        name: 'kick',
+        description: 'expulse alguém do servidor.',
+        usage: ['kick @usuário'],
+        member: 'moderadores',
+        category: 'moderação'
     }
 }
 

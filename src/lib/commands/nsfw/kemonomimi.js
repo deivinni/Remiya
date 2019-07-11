@@ -39,13 +39,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 60,
-        helper: {
-            name: 'kemonomimi',
-            description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
-            usage: ['kemonomimi','kemonomimi --ero'],
-            member: 'usuários',
-            category: 'nsfw'
-        }
+        cooldown: 60
+    },
+    help: {
+        name: 'kemonomimi',
+        description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
+        usage: ['kemonomimi','kemonomimi --ero'],
+        member: 'usuários',
+        category: 'nsfw'
     }
 }

@@ -27,13 +27,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 3,
-        helper: {
-            name: 'tickle',
-            description: 'faça cócegas em alguém',
-            usage: ['tickle @usuário'],
-            member: 'usuários',
-            category: 'imagens'
-        }
+        cooldown: 3
+    },
+    help: {
+        name: 'tickle',
+        description: 'faça cócegas em alguém',
+        usage: ['tickle @usuário'],
+        member: 'usuários',
+        category: 'imagens'
     }
 }

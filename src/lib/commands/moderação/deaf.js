@@ -14,14 +14,14 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 10,
-        helper: {
-            name: 'deaf',
-            description: 'desative e audio de alguma pessoa.',
-            usage: ['deaf <usuário>'],
-            member: 'moderadores',
-            category: 'moderação'
-        }
+        cooldown: 10
+    },
+    help: {
+        name: 'deaf',
+        description: 'desative e audio de alguma pessoa.',
+        usage: ['deaf @usuário'],
+        member: 'moderadores',
+        category: 'moderação'
     }
 }
 

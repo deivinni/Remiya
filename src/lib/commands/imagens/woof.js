@@ -4,7 +4,7 @@ module.exports = {
     run: async(msg) => {
         const embed = new (require('discord.js').RichEmbed)()
         .setColor(msg.config.colors.padrão)
-        .setFooter(msg.author.tag,mgs.author.displayAvatarURL)
+        .setFooter(msg.author.tag,msg.author.displayAvatarURL)
         .setDescription(`Reaja em ${msg.config.e_men.reload_2} para trocar a imagem.`)
         .setTimestamp()
         get(msg.config.get_images.nekos.sfw.woof).then(r => {
@@ -36,13 +36,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 60,
-        helper: {
-            name: 'woof',
-            description: 'veja umas imagens de doguinhos',
-            usage: ['woof'],
-            member: 'usuários',
-            category: 'imagens'
-        }
+        cooldown: 60
+    },
+    help: {
+        name: 'woof',
+        description: 'veja umas imagens de doguinhos',
+        usage: ['woof'],
+        member: 'usuários',
+        category: 'imagens'
     }
 }

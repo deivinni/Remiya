@@ -66,13 +66,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 3,
-        helper: {
-            name: 'userinfo',
-            description: 'veja as informações de alguém membro do servidor',
-            usage: ['userinfo','userinfo --cargos','userinfo @usuário','userinfo --cargos @usuário'],
-            member: 'usuários',
-            category: 'informações'
-        }
+        cooldown: 3
+    },
+    help: {
+        name: 'userinfo',
+        description: 'veja as informações de alguém membro do servidor',
+        usage: ['userinfo','userinfo --cargos','userinfo @usuário','userinfo --cargos @usuário'],
+        member: 'usuários',
+        category: 'informações'
     }
 }

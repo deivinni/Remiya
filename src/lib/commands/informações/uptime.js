@@ -15,13 +15,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 3,
-        helper: {
-            name: 'uptime',
-            description: 'veja o tempo em que estou online',
-            usage: ['uptime'],
-            member: 'usuários',
-            category: 'informações'
-        }
+        cooldown: 3
+    },
+    help: {
+        name: 'uptime',
+        description: 'veja o tempo em que estou online',
+        usage: ['uptime'],
+        member: 'usuários',
+        category: 'informações'
     }
 }

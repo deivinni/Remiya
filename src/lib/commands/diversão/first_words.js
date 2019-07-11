@@ -29,20 +29,20 @@ module.exports = {
         msg.channel.stopTyping()
     },
     conf:{
-        aliases: ['primeiras-palavras','first-words','pp'],
+        aliases: ['primeiras-palavras','pp'],
         nsfw: false,
         guildOnly: false,
         ownerOnly: false,
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 3,
-        helper: {
-            name: 'first_word',
-            description: 'faça um bebe dizer a sua primeira palavra',
-            usage: ['first_word <palavras>'],
-            member: 'usuários',
-            category: 'diversão'
-        }
+        cooldown: 3
+    },
+    help: {
+        name: 'first_word',
+        description: 'faça um bebe dizer a sua primeira palavra',
+        usage: ['first_word <palavras>'],
+        member: 'usuários',
+        category: 'diversão'
     }
 }

@@ -36,13 +36,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 60,
-        helper: {
-            name: 'futanari',
-            description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
-            usage: ['futanari'],
-            member: 'usuários',
-            category: 'nsfw'
-        }
+        cooldown: 60
+    },
+    help: {
+        name: 'futanari',
+        description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
+        usage: ['futanari'],
+        member: 'usuários',
+        category: 'nsfw'
     }
 }

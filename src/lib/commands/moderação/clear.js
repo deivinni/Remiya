@@ -14,14 +14,14 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 10,
-        helper: {
-            name: 'clear',
-            description: 'limpe específicas mensagens.',
-            usage: ['clear <número>'],
-            member: 'moderadores',
-            category: 'moderação'
-        }
+        cooldown: 10
+    },
+    help: {
+        name: 'clear',
+        description: 'limpe específicas mensagens.',
+        usage: ['clear @número'],
+        member: 'moderadores',
+        category: 'moderação'
     }
 }
 

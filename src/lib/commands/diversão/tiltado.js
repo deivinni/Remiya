@@ -20,13 +20,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 3,
-        helper: {
-            name: 'tiltado',
-            description: 'tá tiltado?!',
-            usage: ['tiltado'],
-            member: 'usuários',
-            category: 'diversão'
-        }
+        cooldown: 3
+    },
+    help: {
+        name: 'tiltado',
+        description: 'tá tiltado?!',
+        usage: ['tiltado'],
+        member: 'usuários',
+        category: 'diversão'
     }
 }

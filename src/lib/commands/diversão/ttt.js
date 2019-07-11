@@ -88,13 +88,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 3,
-        helper: {
-            name: 'ttt',
-            description: 'jogo da velha (comando feito por Acnologia)',
-            usage: ['ttt @usuário'],
-            member: 'usuários',
-            category: 'diversão'
-        }
+        cooldown: 3
+    },
+    help: {
+        name: 'ttt',
+        description: 'jogo da velha (comando feito por Acnologia)',
+        usage: ['ttt @usuário'],
+        member: 'usuários',
+        category: 'diversão'
     }
 }

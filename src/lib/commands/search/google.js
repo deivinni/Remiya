@@ -51,14 +51,14 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 10,
-        helper: {
-            name: 'google',
-            description: 'pesquise algo no google.',
-            usage: ['google <pesquisa>'],
-            member: 'usuários',
-            category: 'search'
-        }
+        cooldown: 10
+    },
+    help: {
+        name: 'google',
+        description: 'pesquise algo no google.',
+        usage: ['google <pesquisa>'],
+        member: 'usuários',
+        category: 'search'
     }
 }
 function getText(children) {

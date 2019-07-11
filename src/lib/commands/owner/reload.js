@@ -32,13 +32,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: false,
-        cooldown: 3,
-        helper: {
-            name: 'reload',
-            description: 'recarregue um comando sem ter que me reiniciar',
-            member: 'criador',
-            usage: ['reload','reload [pasta]','reload [pasta] [comando]'],
-            category: 'owner',
-        }
+        cooldown: 3
+    },
+    help: {
+        name: 'reload',
+        description: 'recarregue um comando sem ter que me reiniciar',
+        member: 'criador',
+        usage: ['reload','reload [pasta]','reload [pasta] [comando]'],
+        category: 'owner',
     }
 }

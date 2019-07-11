@@ -10,13 +10,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 3,
-        helper: {
-            name: 'ping',
-            description: 'veja a minha latência',
-            member: 'usuários',
-            category: 'informações',
-            usage: ['ping']
-        }
+        cooldown: 3
+    },
+    help: {
+        name: 'ping',
+        description: 'veja a minha latência',
+        member: 'usuários',
+        category: 'informações',
+        usage: ['ping']
     }
 }

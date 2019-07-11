@@ -29,13 +29,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 10,
-        helper: {
-            name: 'docs',
-            description: 'veja as documentações do discord.js',
-            usage: ['docs <pesquisa>'],
-            member: 'usuários',
-            category: 'search'
-        }
+        cooldown: 10
+    },
+    help: {
+        name: 'docs',
+        description: 'veja as documentações do discord.js',
+        usage: ['docs <pesquisa>'],
+        member: 'usuários',
+        category: 'search'
     }
 }

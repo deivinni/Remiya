@@ -16,13 +16,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 3,
-        helper: {
-            name: 'ascii',
-            description: 'crie uma mensagem ascii',
-            usage: ['ascii <frase>'],
-            member: 'usuários',
-            category: 'diversão'
-        }
+        cooldown: 3
+    },
+    help: {
+        name: 'ascii',
+        description: 'crie uma mensagem ascii',
+        usage: ['ascii <frase>'],
+        member: 'usuários',
+        category: 'diversão'
     }
 }

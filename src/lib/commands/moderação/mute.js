@@ -11,17 +11,17 @@ module.exports = {
         nsfw: false,
         guildOnly: false,
         ownerOnly: false,
-        manu: true,
+        manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 60,
-        helper: {
-            name: 'mute',
-            description: 'mute alguém do servidor.',
-            usage: ['mute <usuário>'],
-            member: 'moderadores',
-            category: 'moderação'
-        }
+        cooldown: 60
+    },
+    help: {
+        name: 'mute',
+        description: 'mute alguém do servidor.',
+        usage: ['mute @usuário'],
+        member: 'moderadores',
+        category: 'moderação'
     }
 }
 

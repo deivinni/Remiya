@@ -16,13 +16,13 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: false,
-        cowldoon: 3,
-        helper: {
-            name: 'paulo-bomdia',
-            description: 'manda um bom dia do paulo',
-            usage: ['caio'],
-            member: 'Paulo',
-            category: 'diversão'
-        }
+        cowldoon: 3
+    },
+    help: {
+        name: 'paulo-bomdia',
+        description: 'manda um bom dia do paulo',
+        usage: ['paul-bomdia'],
+        member: 'Paulo',
+        category: 'diversão'
     }
 }
