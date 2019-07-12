@@ -47,11 +47,11 @@ module.exports = {
                                     .setThumbnail('https://cdn.discordapp.com/emojis/588121041029824534.png?v=1')
                                 )
                             break;
-                            case '598130455602003969'://diversão
+                            case '598130455602003969'://game
                             r.remove(msg.author.id)
                             m.edit(
                                 new RichEmbed()
-                                .setTitle('Categoria: Diversão')
+                                .setTitle('Categoria: Game')
                                 .setDescription(msg.bot.commands.filter(c => c.help.category === 'game').map(c => `\`${c.help.name}\`: ${c.help.description}`).join('\n'))
                                 .setFooter(`Pagina 2 de ${readdirSync('./src/lib/commands/').length-1}`)
                                 .setColor(msg.config.colors.padrão)
