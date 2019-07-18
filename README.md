@@ -1,7 +1,9 @@
-# Remiya
+<h2 align="center">Remiya</h2>
 Um simples bot ainda em desenvolvimento para lhe ajudar no seu servidor.
 
-# Comandos:
+<h2 align="center">Comandos</h2>
+
+Aqui esta listada todas as categorias de comandos do bot atualmente.
 
 Categoria|Descrição
 -|-
@@ -13,3 +15,13 @@ Moderação|Comandos para gerenciar a seu servidor e manter a ordem.
 NSFW|Comandos para quando você estiver sem nada pra fazer durante a noite ( ͡° ͜ʖ ͡°).
 Search|Pesquise por diversas coisas.
 Utilidades|Como o próprio nome diz, comandos que sera útil em algo.
+
+<h2 align="center">Links uteis</h2>
+
+Dono e desenvolvedor: DEIVINNI#0690
+
+Invite: [indisponível](https://www.google.com/)
+
+Servidor: [em breve](https://www.google.com/)
+
+Site: [em breve](https://www.google.com/)
