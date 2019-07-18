@@ -1,4 +1,5 @@
 const snekfetch = require('snekfetch');
+const { RemiyaEmbed } = require('../../../util/functions/index')
 
 module.exports = {
     run: async(msg) => {
@@ -21,21 +22,20 @@ module.exports = {
             if (data.platforms.linux) platforms.push('Linux');
         }
         msg.channel.send(
-            new (require('discord.js').RichEmbed)()
+            new RemiyaEmbed(msg.author)
             .setColor(0x101D2F)
             .setAuthor('Steam', msg.bot.user.displayAvatarURL, 'http://store.steampowered.com/')
             .setThumbnail('https://i.imgur.com/xxr2UBZ.png')
             .setTitle(`Jogo: ${data.name}`).setURL(`http://store.steampowered.com/app/${data.steam_appid}`)
             .setImage(`${tiny_image}`.replace('231','616').replace('87','353'))
-            .setFooter(msg.author.tag, msg.author.displayAvatarURL).setTimestamp()
-            .addField('<:seta_:586617374136991768>Preço', price, true)
-            .addField('<:seta_:586617374136991768>Avaliação', data.metacritic ? data.metacritic.score : '???', true)
-            .addField('<:seta_:586617374136991768>Recomedações', data.recommendations ? data.recommendations.total : '???', true)
-            .addField('<:seta_:586617374136991768>Plataformas', platforms.join(', ') || 'nenhuma', true)
-            .addField('<:seta_:586617374136991768>Data de lançamento', data.release_date ? data.release_date.date : '???', true)
-            .addField('<:seta_:586617374136991768>Total de DLCs', data.dlc ? data.dlc.length : 0, true)
-            .addField('<:seta_:586617374136991768>Desenvolvedores', data.developers ? data.developers.join(', ') || '???' : '???', true)
-            .addField('<:seta_:586617374136991768>Editoras', data.publishers ? data.publishers.join(', ') || '???' : '???', true)
+            .addField(`${msg.config.e_men._seta} Preço`, price, true)
+            .addField(`${msg.config.e_men._seta} Avaliação`, data.metacritic ? data.metacritic.score : '???', true)
+            .addField(`${msg.config.e_men._seta} Recomedações`, data.recommendations ? data.recommendations.total : '???', true)
+            .addField(`${msg.config.e_men._seta} Plataformas`, platforms.join(', ') || 'nenhuma', true)
+            .addField(`${msg.config.e_men._seta} Data de lançamento`, data.release_date ? data.release_date.date : '???', true)
+            .addField(`${msg.config.e_men._seta} Total de DLCs`, data.dlc ? data.dlc.length : 0, true)
+            .addField(`${msg.config.e_men._seta} Desenvolvedores`, data.developers ? data.developers.join(', ') || '???' : '???', true)
+            .addField(`${msg.config.e_men._seta} Editoras`, data.publishers ? data.publishers.join(', ') || '???' : '???', true)
         )
     },
     conf:{

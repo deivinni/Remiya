@@ -1,19 +1,19 @@
 const { get } = require('snekfetch');
-const { RemiyaEmbed } = require('../../../util/functions/index')
+const { RemiyaEmbed } = require('../../../util/functions/index');
 
 module.exports = {
     run: async(msg) => {
         const embed = new RemiyaEmbed(msg.author).setDescription(`Reaja em ${msg.config.e_men.reload_} para trocar a imagem.`);
-        get(msg.config.get_images.nekos.nsfw.avatar).then(r => {
-            msg.channel.send(embed.setImage(r.body.url)).then(message => {
+        get('https://nekobot.xyz/api/image?type=4k').then(r => {
+            msg.channel.send(embed.setImage(r.body.message)).then(message => {
                 message.react(msg.config.e_id.reload_)
                 const collector = message.createReactionCollector((r,u) => r.emoji.id === msg.config.e_id.reload_ && u.id == msg.author.id, {time: 60000});
                 collector.on('collect', (r) => {
                     switch (r.emoji.id) {
                         case msg.config.e_id.reload_:
-                            get(msg.config.get_images.nekos.nsfw.avatar).then(r1 => {
+                            get('https://nekobot.xyz/api/image?type=4k').then(r1 => {
                                 r.remove(msg.author.id)
-                                message.edit(embed.setImage(r1.body.url))
+                                message.edit(embed.setImage(r1.body.message))
                             })
                         break;
                     }
@@ -36,10 +36,10 @@ module.exports = {
         cooldown: 60
     },
     help: {
-        name: 'p_avatar',
-        description: 'veja uns avatar nsfw ( ͡° ͜ʖ ͡°)',
-        usage: ['p_avatar'],
-        member: 'usuários',
-        category: 'nsfw'
+       name: '4k',
+       description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
+       usage: ['4k'],
+       member: 'usuários',
+       category: 'nsfw'
     }
 }

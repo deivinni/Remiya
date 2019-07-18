@@ -1,6 +1,6 @@
 module.exports = {
     run: async(msg) => {
-        let toEval = msg.args.join(' ');
+        let toEval = msg.args.join(' ').replace('```','').replace('```js','');
         if (toEval.includes('msg.bot.token') || toEval.includes('msg.guild.leave()')) {
             msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, talvez um outro dia.`);
         } else {

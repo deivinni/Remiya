@@ -2,21 +2,12 @@ const { get } = require('snekfetch');
 
 module.exports = {
     run: async(msg) => {
-        const member = msg.mentions.users.first() || msg.bot.users.get(msg.args[0]);
+        const member = msg.mentions.users.filter(a => a.id != msg.bot.id).first() || msg.bot.users.get(msg.args[0]);
         if (!member) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, mencione alguém para fazer cócegas.`)
-        get(msg.config.get_images.nekos.sfw.tickle).then(r => {
-            msg.channel.send({
-                embed:{
-                    footer: {
-                        icon_url: msg.author.displayAvatarURL, 
-                        text:msg.author.tag
-                    },
-                    timestamp: new Date(),
-                    image: {url: r.body.url},
-                    color: msg.config.colors.padrão,
-                    description: `${msg.author}, fez cócegas em ${member}`
-                }
-            })
+        get(msg.config.get_images.nekos.sfw.tickle).then(async(r) => {
+            await msg.channel.send(new RemiyaEmbed(msg.author).setImage(r.body.url)
+                .setDescription(`${msg.author}, fez cócegas em ${member}`)
+            )
         })       
     },
     conf:{

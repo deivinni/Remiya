@@ -4,8 +4,7 @@ module.exports = {
         if (!['267064233102016514'].some(id => msg.author.id == id)) return;
         else {
             msg.delete()
-            msg.channel.createWebhook(henrique.username, henrique.displayAvatarURL)
-            .then(w => w.send('<@308287298632417291>, vai toma no cu!'))
+            msg.channel.send('<@308287298632417291>, VAI TOMA NO CU!')
         }
     },
     conf:{
@@ -16,7 +15,7 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: false,
-        cowldoon: 3
+        cowldoon: 10
     },
     help: {
         name: 'caio',

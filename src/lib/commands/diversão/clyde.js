@@ -7,13 +7,10 @@ module.exports = {
             msg.delete();
             await msg.channel.send({
                 embed:{
-                    image: {url: r.body.message},
-                    footer:{
-                        icon_url: msg.author.displayAvatarURL,
-                        text: msg.author.tag
-                    },
+                    image: { url: r.body.message },
+                    footer:{ icon_url: msg.author.displayAvatarURL, text: msg.author.tag },
                     timestamp: new Date(),
-                    color: msg.config.colors.padrão
+                    color: msg.config.colors.PADRÃO
                 }
             })
         })

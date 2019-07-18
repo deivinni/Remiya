@@ -16,7 +16,7 @@ module.exports = {
                     const pull = require(`../${path}/${cmd}.js`);
                     msg.bot.commands.delete(cmd);
                     msg.bot.commands.set(cmd, pull);
-                    msg.channel.send(`${msg.config.e_men.reload} \`|\` ${msg.author}, comando \`${cmd}\` recarregado com sucesso.`);
+                    msg.channel.send(`${msg.config.e_men.reload_} \`|\` ${msg.author}, comando \`${cmd}\` recarregado com sucesso.`);
                 } catch (e) {
                     msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, não foi possivel recarregar \`${cmd}\`.\nPor causa do seguinte erro: \`${e}\``);
                     console.log(e.stack);

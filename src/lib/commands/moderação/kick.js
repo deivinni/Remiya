@@ -1,7 +1,7 @@
 module.exports = {
     run: async(msg) => {
         if (!isFlag(msg)) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, não foi possível expulsar este usuário.`);
-        const member = msg.guild.member(msg.mentions.first() || msg.bot.users.get(msg.args[0]));
+        const member = msg.guild.member(msg.mentions.filter(a => a.id != msg.bot.id).first() || msg.bot.users.get(msg.args[0]));
         msg.channel.send(`${msg.config.e_men._correto} \`|\` ${msg.author}, o usuário ${member} foi expulso com sucesso.`)
         .then(() => member.kick({reason: msg.args.slice(1).join(' ') || 'Motivo não especificado.'}))
         .catch(() => msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, não foi possível expulsar este usuário.`))

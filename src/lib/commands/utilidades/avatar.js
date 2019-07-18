@@ -1,16 +1,13 @@
-const { RichEmbed } = require('discord.js');
+const { RemiyaEmbed } = require('../../../util/functions/index');
 
 module.exports = {
     run: async(msg) => {
         const member = msg.mentions.users.first() || msg.bot.users.get(msg.args[0]) || msg.author;
-        const avatar = member.displayAvatarURL;
-        if (avatar.endsWith('.gif')) avatar = `${memer.displayAvatarURL}?size=2048`;
+        const avatar = member.displayAvatarURL.endsWith('.gif') ? `${memer.displayAvatarURL}?size=2048` : member.displayAvatarURL;
         msg.channel.send(
-            new RichEmbed()
+            new RemiyaEmbed(msg.author)
             .setDescription(`${msg.config.e_men.instagram} \`|\` Avatar de ${member}`)
             .setImage(avatar)
-            .setFooter(msg.author.tag, msg.author.displayAvatarURL)
-            .setColor(msg.config.colors.padrão)
         )
     },
     conf: {

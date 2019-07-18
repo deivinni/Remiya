@@ -4,17 +4,7 @@ module.exports = {
         require('snekfetch').get(`https://nekobot.xyz/api/imagegen?type=lolice&url=${msg.author.displayAvatarURL}`)
         .then(async(r) => {
             msg.delete();
-            await msg.channel.send({
-                embed:{
-                    image: {url: r.body.message},
-                    footer:{
-                        icon_url: msg.author.displayAvatarURL,
-                        text: msg.author.tag
-                    },
-                    timestamp: new Date(),
-                    color: msg.config.colors.padrão
-                }
-            })
+            await msg.channel.send(new RemiyaEmbed(msg.author).setImage(r.body.message))
         })
         msg.channel.stopTyping(true);
     },

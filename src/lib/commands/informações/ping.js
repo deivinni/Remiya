@@ -1,6 +1,6 @@
 module.exports = {
     run: async(msg) => {
-        msg.channel.send(`${msg.config.e_men.ping} \`|\` ${msg.author}, minha latência é \`${Math.floor(msg.bot.ping)}\` ms!`);
+        msg.channel.send(`${msg.config.e_men.ping} \`|\` ${msg.author}, minha latência é \`${Math.ceil(msg.bot.ping)}\` ms!`);
     },
     conf: {
         aliases: ['latency'],

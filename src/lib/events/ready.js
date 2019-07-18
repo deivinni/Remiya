@@ -1,5 +1,4 @@
-const { prefix } = require('../../util/config')
-
+const { prefix } = require('../../util/config');
 module.exports = (bot) => {
     bot.user.setPresence({
         game:{

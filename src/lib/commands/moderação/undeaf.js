@@ -1,7 +1,7 @@
 module.exports = {
     run: async(msg) => {
         if (!isFlag(msg)) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, não foi possível desensurdecer este usuário.`);
-        const member = msg.guild.member(msg.mention.usera.first() || msg.bot.users.get(msg.args[0]));
+        const member = msg.guild.member(msg.mentions.usera.filter(a => a.id != msg.bot.id).first() || msg.bot.users.get(msg.args[0]));
         msg.channel.send(`${msg.config.e_men._correto} \`|\` ${msg.author}, o usuário ${member} foi desensurdecido com sucesso.`)
         .then(() => member.setDeaf(false))
         .catch(() => msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, não foi possível desensurdecer este usuário.`))

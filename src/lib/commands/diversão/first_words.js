@@ -14,13 +14,13 @@ module.exports = {
                     if (err) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, ocorreu um erro ao gerar a imagem, tente novamente mais tarde.`);
                     msg.channel.send({
                         embed:{
-                            image: {url:'attachment://imagem.png'},
-                            color:msg.config.colors.padrão,
-                            footer:{icon_url:msg.author.displayAvatarURL,text:msg.author.tag},
-                            timestamp:new Date()
+                            image: { url: 'attachment://imagem.png'},
+                            color: msg.config.colors.PADRÃO,
+                            footer: { icon_url: msg.author.displayAvatarURL, text: msg.author.tag },
+                            timestamp: new Date()
                         },
                         files:[
-                            {attachment:buffer,name:'imagem.png'}
+                            { attachment: buffer, name: 'imagem.png' }
                         ]
                     })
                 })
@@ -39,7 +39,7 @@ module.exports = {
         cooldown: 3
     },
     help: {
-        name: 'first_word',
+        name: 'first_words',
         description: 'faça um bebe dizer a sua primeira palavra',
         usage: ['first_word <palavras>'],
         member: 'usuários',

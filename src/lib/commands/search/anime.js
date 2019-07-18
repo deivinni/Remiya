@@ -1,34 +1,35 @@
-const { stripIndents } = require('common-tags');
-const moment = require('moment');
+const moment = require('moment'); moment.locale('pt-BR');
 const kitsu = new (require('kitsu.js'))();
+const { RemiyaEmbed } = require('../../../util/functions/index');
 
 module.exports = {
     run: async(msg) => {
         if (!msg.args.join(' ')) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, você deve colocar um anime que queira pesquisar.`);
         try {
-            kitsu.searchAnime(msg.args.join(' ')).then(result => {
-                if (result.length === 0) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, não foi possível encontrar um anime com o nome: \`${msg.args.join(' ')}\`.`);
-                const anime = result[0];
+            kitsu.searchAnime(msg.args.join(' ')).then(r => {
+                if (r.length === 0) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, não foi possível encontrar um anime com o nome: \`${msg.args.join(' ')}\`.`);
                 msg.channel.send(
-                    new (require('discord.js').RichEmbed)()
+                    new RemiyaEmbed(msg.author)
                     .setAuthor('Kitsu.io', 'https://pbs.twimg.com/profile_images/807964865511862278/pIYOVdsl_400x400.jpg','https://kitsu.io/explore/anime')
-                    .setTitle(anime.titles.english?anime.titles.english:search+' | '+anime.showType).setURL(`https://kitsu.io/anime/${anime.slug}`)
-                    .setDescription(shorten(anime.synopsis))
-                    .setFooter(msg.author.tag,msg.author.displayAvatarURL).setTimestamp()
-                    .setThumbnail(anime.posterImage ? anime.posterImage.original : null)
-                    .setColor(0xff7f42)
-                    .addField('<:info_:586617373835132930>Informações', stripIndents`
-                    <:seta_:586617374136991768>Nome Japonês: ${anime.titles.romaji}
-                    <:seta_:586617374136991768>Classificação indicativa: ${anime.ageRating}
-                    <:seta_:586617374136991768>NSFW: ${anime.nsfw ? 'sim' : 'não'}`)
-                    .addField('<:stats_:598147679654248448>Estatísticas', stripIndents`
-                    <:seta_:586617374136991768>Classificação média: ${anime.averageRating}
-                    <:seta_:586617374136991768>Ranque: ${anime.ratingRank}
-                    <:seta_:586617374136991768>Ranque de popularidade: ${anime.popularityRank}`)
-                    .addField('<:server_:587307180064112671>Status', stripIndents`
-                    <:seta_:586617374136991768>Episódios: ${anime.episodeCount ? anime.episodeCount : 'N/A'}
-                    <:seta_:586617374136991768>Data de inicio: ${moment.utc(anime.startDate).format('LLL')}
-                    <:seta_:586617374136991768>Data final: ${anime.endDate ? moment.utc(anime.endDate).format('LLLL') : "em lançamento"}`)
+                    .setTitleURL(r[0].titles.english ? r[0].titles.english : msg.args.join(' ')+' | '+r[0].showType, `https://kitsu.io/anime/${r[0].slug}`)
+                    .setDescription(shorten(r[0].synopsis))
+                    .setThumbnail(r[0].posterImage ? r[0].posterImage.original : null)
+                    .setColor(msg.config.colors.KITSU)
+                    .addFieldArray('<:informacoes_:599308751681355776> | Informações', [[
+                        `${msg.config.e_men._seta}Nome Japonês: ${r[0].titles.romaji}`,
+                        `${msg.config.e_men._seta}Classificação indicativa: ${r[0].ageRating}`,
+                        `${msg.config.e_men._seta}NSFW: ${r[0].nsfw ? 'sim' : 'não'}`
+                    ]])
+                    .addFieldArray('<:estatisticas_:599308751694200846> | Estatísticas', [[
+                        `${msg.config.e_men._seta}Classificação média: ${r[0].averageRating}`,
+                        `${msg.config.e_men._seta}Ranque: ${r[0].ratingRank}`,
+                        `${msg.config.e_men._seta}Ranque de popularidade: ${r[0].popularityRank}`
+                    ]])
+                    .addFieldArray('<:server_:587307180064112671> | Status', [[
+                        `${msg.config.e_men._seta}Episódios: ${r[0].episodeCount ? r[0].episodeCount : 'N/A'}`,
+                        `${msg.config.e_men._seta}Data de inicio: ${moment.utc(r[0].startDate).format('LLLL')}`,
+                        `${msg.config.e_men._seta}Data final: ${r[0].endDate ? moment.utc(r[0].endDate).format('LLLL') : 'em lançamento'}`
+                    ]])
                 ).catch(e => {
                     console.log(e.stack)
                     msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, não foi possível encontrar este anime: \`${msg.args.join(' ')}\`.`)

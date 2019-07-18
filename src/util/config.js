@@ -9,12 +9,13 @@ module.exports = {
     e_id: require('./assets/EmojisIDs.js'),
     get_images: require('./assets/GetImages.js'),
     colors:{
-        padrão: 0xf25cb3,
-        preto: 0x000000,
-        branco: 0xffffff,
-        amarelo: 0xf0f72a,
-        vermelho: 0xdb5e5e,
-        verde: 0x2df74c,
-        azul: 0x2d3df7
+        PADRÃO: 0x3F68D9,
+        PRETO: 0x000000,
+        BRANCO: 0xFFFFFF,
+        AMARELO: 0xF0F72A,
+        VERMELHO: 0xDB5E5E,
+        VERDE: 0x2DF74C,
+        AZUL: 0x2D3DF7,
+        KITSU: 0xFF7F42
     }
 }

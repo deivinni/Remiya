@@ -4,9 +4,8 @@ module.exports = {
         const users = msg.bot.users.filter(user => user.discriminator === discrim).map(user => user.tag);
         if (users.length < 1) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, não encontrei nenhum usuário com este discriminador: \`#${discrim}\`.`);
         msg.channel.send(
-            new (require('discord.js').RichEmbed)()
+            new (require('../../../util/functions/index').RemiyaEmbed)(msg.author)
             .setTitle(`${users.length} ${users.length > 1 ? 'usuários' : 'usuário'} com este discriminador: #${discrim}`)
-            .setColor(msg.config.colors.padrão)
             .setDescription(users.join(' \`|\` '))
         )
     },

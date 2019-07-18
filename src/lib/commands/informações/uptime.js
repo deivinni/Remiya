@@ -1,6 +1,4 @@
-const moment = require('moment');
-require('moment-duration-format');
-moment.locale('pt-BR');
+const moment = require('moment'); require('moment-duration-format'); moment.locale('pt-BR');
 
 module.exports = {
     run: async(msg) => {
