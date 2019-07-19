@@ -9,7 +9,7 @@ module.exports = {
                 src: 'https://raw.githubusercontent.com/discordjs/discord.js/docs/stable.json',
                 q: msg.args.join(' ')
             });
-            const res = await request({
+            await request({
                 url: `https://djsdocs.sorta.moe/v2/embed?${query}`,
                 json: true
             }, async(req, res, json) => {
