@@ -1,3 +1,3 @@
 git add .
-git commit -am "Update"
+git commit -am "🤷"
 git push heroku master
