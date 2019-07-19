@@ -1,3 +1,5 @@
+const { RemiyaEmbed } = require('../../../util/functions/index')
+
 module.exports = {
     run: async(msg) => {
         const member = msg.mentions.users.filter(a => a.id != msg.bot.id).first();
@@ -5,14 +7,7 @@ module.exports = {
         msg.channel.startTyping(true);
         require('snekfetch').get(`https://nekobot.xyz/api/imagegen?type=ship&user1=${member.displayAvatarURL}&user2=${msg.author.displayAvatarURL}`)
         .then(async(r) => {
-            await msg.channel.send({
-                embed:{
-                    image: { url: r.body.message},
-                    color: msg.config.colors.PADRÃO,
-                    footer: { icon_url: msg.author.displayAvatarURL, text: msg.author.tag },
-                    timestamp: new Date()
-                }
-            })
+            await msg.channel.send(new RemiyaEmbed(msg.author).setImage(r.body.message))
         })
         msg.channel.stopTyping(true);
     },

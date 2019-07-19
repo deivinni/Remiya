@@ -1,3 +1,4 @@
 module.exports = {
-    RemiyaEmbed: require('./RemiyaEmbed')
+    RemiyaEmbed: require('./RemiyaEmbed'),
+    firstUpperCase: require('./firstUpperCase')
 }

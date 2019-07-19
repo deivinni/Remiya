@@ -1,5 +1,5 @@
 const { readdirSync } = require('fs');
-const { RemiyaEmbed } = require('../../../util/functions/index');
+const { RemiyaEmbed, firstUpperCase } = require('../../../util/functions/index');
 
 module.exports = {
     run: async(msg) => {
@@ -34,7 +34,7 @@ module.exports = {
                                 m.edit(
                                     new RemiyaEmbed(msg.author)
                                     .setTitle('Categoria: Diversão')
-                                    .setDescription(msg.bot.commands.filter(c => c.help.category === 'diversão').map(c => `\`${c.help.name}\`: ${c.help.description}`).join('\n'))
+                                    .setDescription(msg.bot.commands.filter(c => c.help.category === 'diversão').map(c => `\`${firstUpperCase(c.help.name)}\`: ${c.help.description}`).join('\n'))
                                     .setFooter(`Pagina 1 de ${readdirSync('./src/lib/commands/').length-1}`, msg.author.displayAvatarURL)
                                     .setThumbnail(msg.bot.user.displayAvatarURL)
                                     .setAuthor(`Comandos da ${msg.bot.user.username}`,msg.bot.user.displayAvatarURL)
@@ -46,7 +46,7 @@ module.exports = {
                             m.edit(
                                 new RemiyaEmbed(msg.author)
                                 .setTitle('Categoria: Game')
-                                .setDescription(msg.bot.commands.filter(c => c.help.category === 'game').map(c => `\`${c.help.name}\`: ${c.help.description}`).join('\n'))
+                                .setDescription(msg.bot.commands.filter(c => c.help.category === 'game').map(c => `\`${firstUpperCase(c.help.name)}\`: ${c.help.description}`).join('\n'))
                                 .setFooter(`Pagina 2 de ${readdirSync('./src/lib/commands/').length-1}`, msg.author.displayAvatarURL)
                                 .setThumbnail(msg.bot.user.displayAvatarURL)
                                 .setAuthor(`Comandos da ${msg.bot.user.username}`,msg.bot.user.displayAvatarURL)
@@ -58,7 +58,7 @@ module.exports = {
                                 m.edit(
                                     new RemiyaEmbed(msg.author)
                                     .setTitle('Categoria: Imagem/Gif')
-                                    .setDescription(msg.bot.commands.filter(c => c.help.category === 'imagens').map(c => `\`${c.help.name}\`: ${c.help.description}`).join('\n'))
+                                    .setDescription(msg.bot.commands.filter(c => c.help.category === 'imagens').map(c => `\`${firstUpperCase(c.help.name)}\`: ${c.help.description}`).join('\n'))
                                     .setFooter(`Pagina 3 de ${readdirSync('./src/lib/commands/').length-1}`, msg.author.displayAvatarURL)
                                     .setThumbnail(msg.bot.user.displayAvatarURL)
                                     .setAuthor(`Comandos da ${msg.bot.user.username}`,msg.bot.user.displayAvatarURL)
@@ -70,7 +70,7 @@ module.exports = {
                                 m.edit(
                                     new RemiyaEmbed(msg.author)
                                     .setTitle('Categoria: Informação')
-                                    .setDescription(msg.bot.commands.filter(c => c.help.category === 'informações').map(c => `\`${c.help.name}\`: ${c.help.description}`).join('\n'))
+                                    .setDescription(msg.bot.commands.filter(c => c.help.category === 'informações').map(c => `\`${firstUpperCase(c.help.name)}\`: ${c.help.description}`).join('\n'))
                                     .setFooter(`Pagina 4 de ${readdirSync('./src/lib/commands/').length-1}`, msg.author.displayAvatarURL)
                                     .setThumbnail(msg.bot.user.displayAvatarURL)
                                     .setAuthor(`Comandos da ${msg.bot.user.username}`,msg.bot.user.displayAvatarURL)
@@ -82,7 +82,7 @@ module.exports = {
                                 m.edit(
                                     new RemiyaEmbed(msg.author)
                                     .setTitle('Categoria: Moderação')
-                                    .setDescription(msg.bot.commands.filter(c => c.help.category === 'moderação').map(c => `\`${c.help.name}\`: ${c.help.description}`).join('\n'))
+                                    .setDescription(msg.bot.commands.filter(c => c.help.category === 'moderação').map(c => `\`${firstUpperCase(c.help.name)}\`: ${c.help.description}`).join('\n'))
                                     .setFooter(`Pagina 5 de ${readdirSync('./src/lib/commands/').length-1}`, msg.author.displayAvatarURL)
                                     .setThumbnail(msg.bot.user.displayAvatarURL)
                                     .setAuthor(`Comandos da ${msg.bot.user.username}`,msg.bot.user.displayAvatarURL)
@@ -101,7 +101,7 @@ module.exports = {
                                     m.edit(
                                         new RemiyaEmbed(msg.author)
                                         .setTitle('Categoria: NSFW')
-                                        .setDescription(msg.bot.commands.filter(c => c.help.category === 'nsfw').map(c => `\`${c.help.name}\`: ${c.help.description}`).join('\n'))
+                                        .setDescription(msg.bot.commands.filter(c => c.help.category === 'nsfw').map(c => `\`${firstUpperCase(c.help.name)}\`: ${c.help.description}`).join('\n'))
                                         .setFooter(`Pagina 6 de ${readdirSync('./src/lib/commands/').length-1}`, msg.author.displayAvatarURL)
                                         .setThumbnail(msg.bot.user.displayAvatarURL)
                                         .setAuthor(`Comandos da ${msg.bot.user.username}`,msg.bot.user.displayAvatarURL)
@@ -114,7 +114,7 @@ module.exports = {
                                 m.edit(
                                     new RemiyaEmbed(msg.author)
                                     .setTitle('Categoria: Search')
-                                    .setDescription(msg.bot.commands.filter(c => c.help.category === 'search').map(c => `\`${c.help.name}\`: ${c.help.description}`).join('\n'))
+                                    .setDescription(msg.bot.commands.filter(c => c.help.category === 'search').map(c => `\`${firstUpperCase(c.help.name)}\`: ${c.help.description}`).join('\n'))
                                     .setFooter(`Pagina 7 de ${readdirSync('./src/lib/commands/').length-1}`, msg.author.displayAvatarURL)
                                     .setThumbnail(msg.bot.user.displayAvatarURL)
                                     .setAuthor(`Comandos da ${msg.bot.user.username}`,msg.bot.user.displayAvatarURL)
@@ -126,7 +126,7 @@ module.exports = {
                                 m.edit(
                                     new RemiyaEmbed(msg.author)
                                     .setTitle('Categoria: Utilidade')
-                                    .setDescription(msg.bot.commands.filter(c => c.help.category === 'utilidades').map(c => `\`${c.help.name}\`: ${c.help.description}`).join('\n'))
+                                    .setDescription(msg.bot.commands.filter(c => c.help.category === 'utilidades').map(c => `\`${firstUpperCase(c.help.name)}\`: ${c.help.description}`).join('\n'))
                                     .setFooter(`Pagina 8 de ${readdirSync('./src/lib/commands/').length-1}`, msg.author.displayAvatarURL)
                                     .setThumbnail(msg.bot.user.displayAvatarURL)
                                     .setAuthor(`Comandos da ${msg.bot.user.username}`,msg.bot.user.displayAvatarURL)
@@ -178,24 +178,30 @@ module.exports = {
             if (!cmd) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, entrada inválida. Tente utilizar apenas caracteres minúsculos.`);
             if (!cmd.conf.hide_help || (cmd.conf.nsfw && !msg.channel.nsfw)) return;
             embed.setDescription(`\`<>\`: obrigatório / \`[]\`: opcional`)
-            .addFieldArray(`${msg.config.e_men._info} | Informações`, [[
-                `${msg.config.e_men._seta}Nome: ${cmd.help.name.slice(0, 1).toUpperCase() + cmd.help.name.slice(1)}`,
-                `${msg.config.e_men._seta}Aliases: ${cmd.conf.aliases.map(a => '`'+a+'`').join(', ') || 'sem aliases'}`,
-                `${msg.config.e_men._seta}Descrição: ${cmd.help.description}`,
-                `${msg.config.e_men._seta}Categoria: ${cmd.help.category}`
+            cmd.conf.aliases.length < 1 
+            ? embed.addFieldArray(`${msg.config.e_men._info} | Informações`, [[
+                `${msg.config.e_men._seta}Nome: ${firstUpperCase(cmd.help.name)}`,
+                `${msg.config.e_men._seta}Descrição: ${firstUpperCase(cmd.help.description)}`,
+                `${msg.config.e_men._seta}Categoria: ${cmd.help.category === 'nsfw' ? 'NSFW': firstUpperCase(cmd.help.category)}`
             ]])
-            .addFieldArray(`${msg.config.e_men.util} | Utilização`, [[
+            : embed.addFieldArray(`${msg.config.e_men._info} | Informações`, [[
+                `${msg.config.e_men._seta}Nome: ${firstUpperCase(cmd.help.name)}`,
+                `${msg.config.e_men._seta}Aliases: ${cmd.conf.aliases.map(a => '`'+a+'`').join(', ')}`,
+                `${msg.config.e_men._seta}Descrição: ${firstUpperCase(cmd.help.description)}`,
+                `${msg.config.e_men._seta}Categoria: ${cmd.help.category === 'nsfw' ? 'NSFW': firstUpperCase(cmd.help.category)}`
+            ]])
+            embed.addFieldArray(`${msg.config.e_men.util} | Utilização`, [[
                 `${msg.config.e_men._seta}Form${cmd.help.usage.length === 1 ? 'a' : 'as'} de uso:`,
                 `${cmd.help.usage.map(a => `${msg.config.e_men._invisivel}• \`${msg.config.prefix+a}\``).join('\n')}`,
-                `${msg.config.e_men._seta}Acessível por: ${cmd.help.member}`
+                `${msg.config.e_men._seta}Acessível por: ${firstUpperCase(cmd.help.member)}`
             ]])
-            .addFieldArray(`${msg.config.e_men.configs} | Configurações`, [[
+            embed.addFieldArray(`${msg.config.e_men.configs} | Configurações`, [[
                 `${msg.config.e_men._seta}DM: ${cmd.conf.guildOnly ? msg.config.e_men.desativado : msg.config.e_men.ativado}`,
                 `${msg.config.e_men._seta}Manutenção: ${cmd.conf.manu ? msg.config.e_men.ativado : msg.config.e_men.desativado}`,
                 `${msg.config.e_men._seta}Habilitado: ${cmd.conf.enable ? msg.config.e_men.ativado : msg.config.e_men.desativado}`,
                 `${msg.config.e_men._seta}NSFW: ${cmd.conf.nsfw ? msg.config.e_men.ativado : msg.config.e_men.desativado}`
             ]])
-            .setFooter(`© ${msg.bot.user.username}`, msg.author.displayAvatarURL)
+            embed.setFooter(`© ${msg.bot.user.username}`, msg.author.displayAvatarURL)
             return msg.channel.send(embed);
         }
     },

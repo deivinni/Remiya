@@ -1,3 +1,5 @@
+const { RemiyaEmbed } = require('../../../util/functions/index')
+
 module.exports = {
     run: async(msg) => {
         if (!msg.args.join(' ')) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, você deve colocar alguma mensagem para o Donald Trump tweetar.`);
@@ -5,14 +7,7 @@ module.exports = {
         require('snekfetch').get(`https://nekobot.xyz/api/imagegen?type=trumptweet&text=${msg.args.join(' ')}`)
         .then(async (r) => {
             msg.delete();
-            await msg.channel.send({
-                embed:{
-                    image: { url: r.body.message },
-                    footer: { icon_url: msg.author.displayAvatarURL, text: msg.author.tag },
-                    timestamp: new Date(),
-                    color: msg.config.colors.PADRÃO
-                }
-            })
+            await msg.channel.send(new RemiyaEmbed(msg.author).setImage(r.body.message))
         })
         msg.channel.stopTyping(true);
     },

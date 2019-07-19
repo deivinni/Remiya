@@ -1,13 +1,11 @@
+const { RemiyaEmbed } = require('../../../util/functions/index')
+
 module.exports = {
     run: async(msg) => {
-        msg.channel.send({
-            embed: {
-                color: msg.config.colors.PADRÃO,
-                image: { url: 'https://cdn.discordapp.com/attachments/587366096839901204/596447280752754708/t-tito.gif' },
-                footer:{ icon_url: msg.author.displayAvatarURL, text: msg.author.tag },
-                timestamp: new Date()
-            }
-        })
+        msg.channel.send(
+            new RemiyaEmbed(msg.author)
+            .setImage('https://cdn.discordapp.com/attachments/587366096839901204/596447280752754708/t-tito.gif')
+        )
     },
     conf:{
         aliases: [],
@@ -17,7 +15,7 @@ module.exports = {
         manu: false,
         enable: true,
         hide_help: true,
-        cooldown: 3
+        cooldown: 10
     },
     help: {
         name: 'tiltado',
