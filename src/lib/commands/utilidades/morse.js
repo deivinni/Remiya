@@ -26,11 +26,12 @@ module.exports = {
             'ŝ': '...-.',  'š': '----',   'þ': '.--..',  'ü': '..--',
             'ŭ': '..--',   'ź': '--..-.', 'ż': '--..-',  ' ': '\u2007'
         }
-        msg.channel.send(require('common-tags').stripIndents`
-        ${msg.config.e_men._correto} \`|\` ${msg.author}, aqui está o seu \`código morse\`:
-        \`\`\`
-        ${msg.args.join(' ').toLowerCase().replace(/./g, x => morse[x]+'\u2001').trim()}
-        \`\`\``);
+        msg.channel.send([
+            `${msg.config.e_men._correto} \`|\` ${msg.author}, aqui está o seu \`código morse\`:`,
+            '```',
+            `${msg.args.join(' ').toLowerCase().replace(/./g, x => morse[x]+'\u2001').trim()}`,
+            '```'
+        ].join('\n'))
     },
     conf:{
         aliases: [],
