@@ -26,7 +26,7 @@ module.exports = {
             .setColor(0x101D2F)
             .setAuthor('Steam', msg.bot.user.displayAvatarURL, 'http://store.steampowered.com/')
             .setThumbnail('https://i.imgur.com/xxr2UBZ.png')
-            .setTitle(`Jogo: ${data.name}`).setURL(`http://store.steampowered.com/app/${data.steam_appid}`)
+            .setTitleURL(`Jogo: ${data.name}`, `http://store.steampowered.com/app/${data.steam_appid}`)
             .setImage(`${tiny_image}`.replace('231','616').replace('87','353'))
             .addField(`${msg.config.e_men._seta} Preço`, price, true)
             .addField(`${msg.config.e_men._seta} Avaliação`, data.metacritic ? data.metacritic.score : '???', true)

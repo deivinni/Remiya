@@ -1,3 +1,5 @@
+const { RemiyaEmbed } = require('../../../util/functions/index')
+
 module.exports = {
     run: async(msg) => {
         if (!msg.args.join(' ')) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, você deve colocar uma mensagem que desaja comentar no pornhub.`);

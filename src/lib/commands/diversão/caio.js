@@ -1,11 +1,8 @@
 module.exports = {
     run: async(msg) => {
-        const henrique = msg.bot.users.get('267064233102016514')
+        msg.delete()
         if (!['267064233102016514'].some(id => msg.author.id == id)) return;
-        else {
-            msg.delete()
-            msg.channel.send('<@308287298632417291>, VAI TOMA NO CU!')
-        }
+        msg.channel.send('<@308287298632417291>, VAI TOMA NO CU!')
     },
     conf:{
         aliases: [],

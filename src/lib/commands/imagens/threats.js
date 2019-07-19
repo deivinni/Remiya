@@ -1,3 +1,5 @@
+const { RemiyaEmbed } = require('../../../util/functions/index')
+
 module.exports = {
     run: async(msg) => {
         const image = msg.args.join(' ') || msg.author.displayAvatarURL;

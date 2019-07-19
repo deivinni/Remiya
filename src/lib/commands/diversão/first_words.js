@@ -12,7 +12,7 @@ module.exports = {
                 image.print(font, 19, 290, `${msg.args.join(' ')}`, 320)
                 image.getBuffer(Jimp.MIME_PNG, (err, buffer) => {
                     if (err) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, ocorreu um erro ao gerar a imagem, tente novamente mais tarde.`);
-                    msg.channel.send(new RemiyaEmbed(msg.author).setImage('attachment://imagem.png'),{
+                    msg.channel.send(new RemiyaEmbed(msg.author).setImage('attachment://imagem.png'), {
                         files: [
                             { attachment: buffer, name: 'imagem.png' }
                         ]
