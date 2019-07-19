@@ -15,7 +15,7 @@ NSFW|Comandos para quando você estiver sem nada pra fazer durante a noite ( ͡�
 Search|Pesquise por diversas coisas.
 Utilidades|Como o próprio nome diz, comandos que sera útil em algo.
 
-# Infoamções uteis
+# Informações uteis
 Dono e desenvolvedor: DEIVINNI#0690.
 
 Invite: [indisponível](https://www.google.com/).
