@@ -9,7 +9,7 @@ module.exports = {
         if (!msg.args[0]) {
             msg.channel.send(
                 embed.setDescriptionArray([[
-                    `${msg.config.e_men.cmd} \`|\` Total de comandos: \`${msg.bot.commands.size-2}\`.`,
+                    `${msg.config.e_men.cmd} \`|\` Total de comandos: \`${msg.bot.commands.size-msg.bot.commands.filter(c=>c.help.category==='owner').size}\`.`,
                     `${msg.config.e_men.pasta} \`|\` Total de categorias: \`${readdirSync('./src/lib/commands/').length-1}\`.`,
                     `${msg.config.e_men.util} \`|\` Prefixo neste servidor: \`${msg.config.prefix}\`.`,
                     `${msg.config.e_men.add} \`|\` Clique nas reações para ter mais informações de uma categoria.`
@@ -138,7 +138,7 @@ module.exports = {
                                 m.edit(
                                     new RemiyaEmbed(msg.author)
                                     .setDescriptionArray([[
-                                        `${msg.config.e_men.cmd} \`|\` Total de comandos: \`${msg.bot.commands.size-2}\`.`,
+                                        `${msg.config.e_men.cmd} \`|\` Total de comandos: \`${msg.bot.commands.size-msg.bot.commands.filter(c=>c.help.category==='owner').size}\`.`,
                                         `${msg.config.e_men.pasta} \`|\` Total de categorias: \`${readdirSync('./src/lib/commands/').length-1}\`.`,
                                         `${msg.config.e_men.util} \`|\` Prefixo neste servidor: \`${msg.config.prefix}\`.`,
                                         `${msg.config.e_men.add} \`|\` Clique nas reações para ter mais informações de uma categoria.`
@@ -164,7 +164,7 @@ module.exports = {
                         m.edit(
                             embed
                                 .setDescriptionArray([[
-                                    `${msg.config.e_men.cmd} \`|\` Total de comandos: \`${msg.bot.commands.size-2}\`.`,
+                                    `${msg.config.e_men.cmd} \`|\` Total de comandos: \`${msg.bot.commands.size-msg.bot.commands.filter(c=>c.help.category==='owner').size}\`.`,
                                     `${msg.config.e_men.pasta} \`|\` Total de categorias: \`${readdirSync('./src/lib/commands/').length-1}\`.`,
                                     `${msg.config.e_men.util} \`|\` Prefixo neste servidor: \`${msg.config.prefix}\`.`
                                 ]])
@@ -181,7 +181,7 @@ module.exports = {
             cmd.conf.aliases.length < 1 
             ? embed.addFieldArray(`${msg.config.e_men._info} | Informações`, [[
                 `${msg.config.e_men._seta}Nome: ${firstUpperCase(cmd.help.name)}`,
-                `${msg.config.e_men._seta}Descrição: ${firstUpperCase(cmd.help.description)}`,
+                `${msg.config.e_men._seta}Descrição: ${firstUpperCase(cmd.help.description.slice(0), '')}`,
                 `${msg.config.e_men._seta}Categoria: ${cmd.help.category === 'nsfw' ? 'NSFW': firstUpperCase(cmd.help.category)}`
             ]])
             : embed.addFieldArray(`${msg.config.e_men._info} | Informações`, [[

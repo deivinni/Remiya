@@ -2,7 +2,8 @@ const config = require('../../util/config');
 
 module.exports = async (bot, msg) => {
     if (msg.author.bot) return;
-    if (msg.content.startsWith(`<@${bot.user.id}>`)) return msg.channel.send(`${config.e_men.bot_mention} \`|\` ${msg.author}, meu prefixo neste servidor é \`${config.prefix}\`, use \`${config.prefix}ajuda\` para saber meus comandos.`);
+    if (msg.content == (`<@${bot.user.id}>` || `<@!${bot.user.id}>`)) 
+        return msg.channel.send(`${config.e_men.bot_mention} \`|\` ${msg.author}, meu prefixo é \`${config.prefix}\`. Utilize \`${config.prefix}ajuda\` para saber os meus comandos.`);
     if (!msg.content.startsWith(config.prefix)) return;
     const args = msg.content.slice(config.prefix.length).trim().split(/\s+/g);
     const comando = args.shift().toLowerCase();
@@ -19,6 +20,8 @@ module.exports = async (bot, msg) => {
             return msg.channel.send(`${config.e_men.desativado} \`|\` ${msg.author}, este comando esta desabilitado.`);
         if ((cmd.conf.nsfw && !msg.channel.nsfw) && (cmd.conf.nsfw && msg.channel.type != 'dm'))
             return msg.channel.send(`🔞 \`|\` ${msg.author}, você deve estar um chat \`NSFW\` para usar este comando.`);
+        //if (cmd.conf.premium && user.premium == false)
+        //    return msg.channel.send(`<:premium_:601887751431913490> \`|\` ${msg.author}, este comando só pode ser usuários \`premium\`!`);
         if (!bot.cooldowns.get(cmd.help.name)) 
             bot.cooldowns.set(cmd.help.name, new (require('discord.js').Collection)());
         const now = Date.now();

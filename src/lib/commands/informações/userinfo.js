@@ -29,16 +29,16 @@ module.exports = {
                 .setAuthor(`Informações de ${usuario.tag}`, msg.bot.user.displayAvatarURL)
                 .setThumbnail(usuario.displayAvatarURL)
                 .addFieldArray(`${msg.config.e_men._info} | Informações principais`, [[
-                    `${msg.config.e_men._seta} Nome: ${usuario.username} - \`${usuario.id}\``,
-                    `${msg.config.e_men._seta} Status: ${user_status}`,
-                    `${msg.config.e_men._seta} Jogando: ${usuario.presence.game ? usuario.presence.game.name : '<:offline_:587101313243021322>'}`,
-                    `${msg.config.e_men._seta} Criado: ${moment(usuario.createdAt).format('LLLL')}`
+                    `${msg.config.e_men._seta}Nome: ${usuario.username} - \`${usuario.id}\``,
+                    `${msg.config.e_men._seta}Status: ${user_status}`,
+                    `${msg.config.e_men._seta}Jogando: ${usuario.presence.game ? usuario.presence.game.name : '<:offline_:587101313243021322>'}`,
+                    `${msg.config.e_men._seta}Criado: ${moment(usuario.createdAt).format('LLLL')}`
                 ]])
                 .addFieldArray(`${msg.config.e_men._seta} | Informações no servidor`, [[
-                    `${msg.config.e_men._seta} Apelido: ${usuario.nickname || usuario.username}`,
-                    `${msg.config.e_men._seta} Entrou: ${moment(msg.guild.member(usuario).joinedAt).format('LLLL')}`,
-                    `${msg.config.e_men._seta} Administrador: ${msg.guild.member(usuario).hasPermission('ADMINISTRATOR') ? msg.config.e_men.ativado : msg.config.e_men.desativado}`,
-                    `${msg.config.e_men._seta} Cargos: ${msg.guild.member(usuario).roles.size ? 'sem cargos' : msg.guild.member(usuario).roles.size-1}`
+                    `${msg.config.e_men._seta}Apelido: ${usuario.nickname || usuario.username}`,
+                    `${msg.config.e_men._seta}Entrou: ${moment(msg.guild.member(usuario).joinedAt).format('LLLL')}`,
+                    `${msg.config.e_men._seta}Administrador: ${msg.guild.member(usuario).hasPermission('ADMINISTRATOR') ? msg.config.e_men.ativado : msg.config.e_men.desativado}`,
+                    `${msg.config.e_men._seta}Cargos: ${msg.guild.member(usuario).roles.size ? 'sem cargos' : msg.guild.member(usuario).roles.size-1}`
                 ]])
             )
         }
