@@ -11,21 +11,13 @@ module.exports = {
             )
         })
     },
-    conf:{
-        aliases: ['beijar'],
-        nsfw: false,
-        guildOnly: true,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 3
-    },
+    conf:{ aliases: ['beijar'], enable: true, cooldown: 10 },
     help: {
         name: 'kiss',
         description: 'beija alguém do servidor',
         usage: ['kiss @usuário'],
         member: 'usuários',
-        category: 'imagens'
+        category: 'imagens',
+        credit: ['[Nekos.life](https://nekos.life/)']
     }
 }

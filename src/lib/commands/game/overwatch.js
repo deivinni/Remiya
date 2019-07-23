@@ -33,21 +33,13 @@ module.exports = {
             msg.channel.stopTyping(true)
         })
     },
-    conf:{
-        aliases: ['ow'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 10
-    },
+    conf:{ aliases: ['ow'], enable: true, cooldown: 10 },
     help: {
        name: 'overwatch',
        description: 'pesquise por um jogador de [overwatch](https://playoverwatch.com/pt-br/)',
        usage: ['overwatch <plataforma> <região> <player>'],
        member: 'usuários',
-       category: 'game'
+       category: 'game',
+       credit: ['[Blizzard](https://www.blizzard.com/pt-br/)']
     }
 }

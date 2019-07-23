@@ -11,21 +11,13 @@ module.exports = {
             )
         })        
     },
-    conf:{
-        aliases: ['bater'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 3
-    },
+    conf:{ aliases: ['bater'], enable: true, cooldown: 10 },
     help: {
         name: 'slap',
         description: 'bata em alguém usuário',
         usage: ['slap @usuário'],
         member: 'usuários',
-        category: 'imagens'
+        category: 'imagens',
+        credit: ['[Nekos.life](https://nekos.life/)']
     }
 }

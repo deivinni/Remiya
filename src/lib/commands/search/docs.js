@@ -22,21 +22,13 @@ module.exports = {
             msg.channel.send(`${config.e_men.errado} \`|\` ${msg.author}, ocorreu um erro inesperado ao executar este comando. Tente novamente mais tarde!`);
         }
     },
-    conf:{
-        aliases: ['djs'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: true,
-        enable: true,
-        hide_help: true,
-        cooldown: 5
-    },
+    conf:{ aliases: ['djs'], enable: true, cooldown: 5 },
     help: {
        name: 'docs',
        description: 'pesquise por algo no discord.js',
        usage: ['docs <pesquisa>'],
        member: 'desemvolvedores',
-       category: 'search'
+       category: 'search',
+       credit: ['[Discord.js](https://discord.js.org/)']
     }
 }

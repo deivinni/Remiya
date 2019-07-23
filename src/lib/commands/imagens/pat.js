@@ -11,21 +11,13 @@ module.exports = {
             )
         })
     },
-    conf:{
-        aliases: ['acariciar'],
-        nsfw: false,
-        guildOnly: true,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 3
-    },
+    conf:{ aliases: ['acariciar'], enable: true, cooldown: 10 },
     help: {
         name: 'pat',
         description: 'acaricie alguém do servidor',
         usage: ['pat @usuário'],
         member: 'usuários',
-        category: 'imagens'
+        category: 'imagens',
+        credit: ['[Nekos.life](https://nekos.life/)']
     }
 }

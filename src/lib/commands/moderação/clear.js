@@ -6,20 +6,11 @@ module.exports = {
         await msg.channel.bulkDelete(limit, true);
         msg.channel.send(`${msg.config.e_men._correto} \`|\` ${msg.author}, ${`\`${limit}\` ` + limit === 1 ? 'mensagem foi apagada' : 'mensagens foram apagadas'} do ${msg.channel} com sucesso.`);
     },
-    conf:{
-        aliases: ['limpar','purge'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 10
-    },
+    conf:{ aliases: ['limpar','purge'], enable: true, cooldown: 5 },
     help: {
         name: 'clear',
         description: 'limpe específicas mensagens.',
-        usage: ['clear @número'],
+        usage: ['clear <número>'],
         member: 'moderadores',
         category: 'moderação'
     }

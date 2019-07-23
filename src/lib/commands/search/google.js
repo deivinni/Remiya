@@ -1,6 +1,6 @@
 const request = require('request-promise-native');
 const cheerio = require('cheerio');
-const { RemiyaEmbed } = require('../../../util/functions/index')
+const { RemiyaEmbed, shortenerText } = require('../../../util/functions/index')
 
 module.exports = {
     run: async(msg) => {
@@ -26,32 +26,24 @@ module.exports = {
             await msg.channel.send(
                 new RemiyaEmbed(msg.author)
                 .setAuthor(`Resultados de ${msg.args.join(' ')}`, 'https://discordemoji.com/assets/emoji/Google_Logo.png', `https://www.google.com/search?q=${encodeURIComponent(msg.args.join(' '))}`)
-                .addField(results.filter(r => r.name)[0], results.filter(r => r.value)[0])
-                .addField(results.filter(r => r.name)[1], results.filter(r => r.value)[1])
-                .addField(results.filter(r => r.name)[2], results.filter(r => r.value)[2])
-                .addField(results.filter(r => r.name)[3], results.filter(r => r.value)[3])
-                .addField(results.filter(r => r.name)[4], results.filter(r => r.value)[4])
+                .addField(results.filter(r => r.name)[0], shortenerText(results.filter(r => r.value)[0]))
+                .addField(results.filter(r => r.name)[1], shortenerText(results.filter(r => r.value)[1]))
+                .addField(results.filter(r => r.name)[2], shortenerText(results.filter(r => r.value)[2]))
+                .addField(results.filter(r => r.name)[3], shortenerText(results.filter(r => r.value)[3]))
+                .addField(results.filter(r => r.name)[4], shortenerText(results.filter(r => r.value)[4]))
             );
         } catch (e) {
             msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, ocorreu um erro inesperado ao executar este comando. Tente novamente mais tarde!`)
         }
     },
-    conf:{
-        aliases: ['go'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 10
-    },
+    conf:{ aliases: ['go'], enable: true, cooldown: 10 },
     help: {
         name: 'google',
         description: 'pesquise algo no google.',
         usage: ['google <pesquisa>'],
         member: 'usuários',
-        category: 'search'
+        category: 'search',
+        credit: ['[Google](https://www.google.com)','[BastionBot](https://github.com/TheBastionBot/Bastion)']
     }
 }
 function getText(children) {

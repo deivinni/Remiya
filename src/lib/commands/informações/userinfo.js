@@ -43,20 +43,11 @@ module.exports = {
             )
         }
     },
-    conf:{
-        aliases: ['ui', 'infouser'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 3
-    },
+    conf:{ aliases: ['ui', 'infouser'], enable: true, cooldown: 10 },
     help: {
         name: 'userinfo',
         description: 'veja as informações de alguém membro do servidor',
-        usage: ['userinfo','userinfo --cargos','userinfo @usuário','userinfo --cargos @usuário'],
+        usage: ['userinfo [@usuário | --cargos | --cargos @usuário]', 'a'],
         member: 'usuários',
         category: 'informações'
     }

@@ -41,21 +41,13 @@ module.exports = {
             msg.channe.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, ocorreu um erro inesperado ao executar esta função. Tente novamente mais tarde!`);
         }
     },
-    conf:{
-        aliases: [],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 5
-    },
+    conf:{ enable: true, cooldown: 10 },
     help: {
        name: 'osu',
        description: 'pesquise por algum jogador no osu!',
        usage: ['osu <player>'],
        member: 'usuários',
-       category: 'game'
+       category: 'game',
+       credit: ['[OSU!](https://osu.ppy.sh/home)']
     }
 }

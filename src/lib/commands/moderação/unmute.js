@@ -6,16 +6,7 @@ module.exports = {
         .then(() => member.setMute(false))
         .catch(() => msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, não foi possível desmutar este usuário.`))
     },
-    conf:{
-        aliases: [],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 3
-    },
+    conf:{ enable: true, cooldown: 30 },
     help: {
         name: 'unmute',
         description: 'desmute alguém do servidor.',

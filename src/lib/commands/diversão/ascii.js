@@ -8,16 +8,7 @@ module.exports = {
             msg.channel.send(rendered, {code: 'md'});
         })
     },
-    conf:{
-        aliases: [],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 3
-    },
+    conf:{ enable: true, cooldown: 10 },
     help: {
         name: 'ascii',
         description: 'crie uma mensagem ascii',

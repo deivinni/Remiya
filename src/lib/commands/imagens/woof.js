@@ -26,21 +26,12 @@ module.exports = {
             })
         })
     },
-    conf:{
-        aliases: ['dog','doguinho'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 60
-    },
+    conf:{ aliases: ['dog','doguinho'], enable: true, cooldown: 60 },
     help: {
         name: 'woof',
         description: 'veja umas imagens de doguinhos',
-        usage: ['woof'],
         member: 'usuários',
-        category: 'imagens'
+        category: 'imagens',
+        credit: ['[Nekos.life](https://nekos.life/)']
     }
 }

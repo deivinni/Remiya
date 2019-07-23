@@ -32,20 +32,10 @@ module.exports = {
             ]])
         )
     },
-    conf:{
-        aliases: [],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: true,
-        enable: true,
-        hide_help: true,
-        cooldown: 10
-    },
+    conf:{ aliases: ['bi'], enable: true, cooldown: 30 },
     help: {
        name: 'botinfo',
        description: 'veja algumas informações sobre mim',
-       usage: ['botinfo'],
        member: 'usuários',
        category: 'informações'
     }

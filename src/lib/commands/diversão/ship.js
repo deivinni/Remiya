@@ -11,21 +11,13 @@ module.exports = {
         })
         msg.channel.stopTyping(true);
     },
-    conf:{
-        aliases: [],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 10
-    },
+    conf:{ enable: true, cooldown: 10 },
     help: {
        name: 'ship',
        description: 'faça um ship de você com mais um pessoa.',
        usage: ['ship @usuário'],
        member: 'usuários',
-       category: 'diversão'
+       category: 'diversão',
+       credit: ['[NekoBot API](https://nekobot.xyz/)']
     }
 }

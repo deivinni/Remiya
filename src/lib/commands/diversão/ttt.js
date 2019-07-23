@@ -80,21 +80,13 @@ module.exports = {
             }, 2000)
         })
     },
-    conf:{
-        aliases: ['jogodavelha','jogo-da-velha','jdv'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 3
-    },
+    conf:{ aliases: ['jogodavelha','jogo-da-velha','jdv'], enable: true, cooldown: 30 },
     help: {
         name: 'ttt',
-        description: 'jogo da velha (comando feito por Acnologia)',
+        description: 'jogue o jogo da velha com um amigo.',
         usage: ['ttt @usuário'],
         member: 'usuários',
-        category: 'diversão'
+        category: 'diversão',
+        credit: ['[Acnologia](https://github.com/Acnologla)']
     }
 }

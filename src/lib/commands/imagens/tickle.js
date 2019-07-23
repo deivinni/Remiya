@@ -11,21 +11,13 @@ module.exports = {
             )
         })       
     },
-    conf:{
-        aliases: ['cócegas'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 3
-    },
+    conf:{ aliases: ['cócegas'], enable: true, cooldown: 10 },
     help: {
         name: 'tickle',
         description: 'faça cócegas em alguém',
         usage: ['tickle @usuário'],
         member: 'usuários',
-        category: 'imagens'
+        category: 'imagens',
+        credit: ['[Nekos.life](https://nekos.life/)']
     }
 }

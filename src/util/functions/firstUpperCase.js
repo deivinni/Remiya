@@ -1,3 +1,3 @@
-module.exports = (text, split = ' ') => {
-    return text.split(split).map(word => `${word.charAt(0).toUpperCase()}${word.slice(1)}`).join(' ');
+module.exports = (text) => {
+    return text.slice(0, 1).toUpperCase() + text.slice(1);
 }

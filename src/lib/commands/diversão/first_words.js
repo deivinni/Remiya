@@ -22,16 +22,7 @@ module.exports = {
         })
         msg.channel.stopTyping()
     },
-    conf:{
-        aliases: ['primeiras-palavras','pp'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 3
-    },
+    conf:{ aliases: ['primeiras-palavras','pp'], enable: true, cooldown: 10 },
     help: {
         name: 'first_words',
         description: 'faça um bebe dizer a sua primeira palavra',

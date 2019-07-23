@@ -26,21 +26,13 @@ module.exports = {
             })
         })
     },
-    conf:{
-        aliases: ['tits'],
-        nsfw: true,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 60
-    },
+    conf:{ aliases: ['tits'], enable: true, cooldown: 60 },
     help: {
         name: 'boobs',
         description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
-        usage: ['boobs', 'boobs --gif'],
+        usage: ['boobs [--gif]','a'],
         member: 'usuários',
-        category: 'nsfw'
+        category: 'nsfw',
+        credit: ['[Nekos.life](https://nekos.life/)']
     }
 }

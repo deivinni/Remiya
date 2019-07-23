@@ -11,21 +11,13 @@ module.exports = {
         })
         msg.channel.stopTyping(true);
     },
-    conf:{
-        aliases: [],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 10
-    },
+    conf:{ enable: true, cooldown: 10 },
     help: {
        name: 'clyde',
        description: 'faça o clyde enviar uma mensagem para você',
        usage: ['clyde <mensagem>'],
        member: 'usuários',
-       category: 'diversão'
+       category: 'diversão',
+       credit: ['[NekoBot API](https://nekobot.xyz/)']
     }
 }

@@ -163,12 +163,11 @@ module.exports = {
                         m.clearReactions();
                         m.edit(
                             embed
-                                .setDescriptionArray([[
-                                    `${msg.config.e_men.cmd} \`|\` Total de comandos: \`${msg.bot.commands.size-msg.bot.commands.filter(c=>c.help.category==='owner').size}\`.`,
-                                    `${msg.config.e_men.pasta} \`|\` Total de categorias: \`${readdirSync('./src/lib/commands/').length-1}\`.`,
-                                    `${msg.config.e_men.util} \`|\` Prefixo neste servidor: \`${msg.config.prefix}\`.`
-                                ]])
-                                .setFooter(msg.author.tag,msg.author.displayAvatarURL)
+                            .setDescriptionArray([[
+                                `${msg.config.e_men.cmd} \`|\` Total de comandos: \`${msg.bot.commands.size-msg.bot.commands.filter(c=>c.help.category==='owner').size}\`.`,
+                                `${msg.config.e_men.pasta} \`|\` Total de categorias: \`${readdirSync('./src/lib/commands/').length-1}\`.`,
+                                `${msg.config.e_men.util} \`|\` Prefixo neste servidor: \`${msg.config.prefix}\`.`
+                            ]]).setFooter(msg.author.tag,msg.author.displayAvatarURL)
                         )
                     }, 60000)
                 })
@@ -176,49 +175,32 @@ module.exports = {
         } else {
             let cmd = msg.bot.commands.get(msg.args[0].toLowerCase()) || msg.bot.commands.get(msg.bot.aliases.get(msg.args[0].toLowerCase()));
             if (!cmd) return msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, entrada inválida. Tente utilizar apenas caracteres minúsculos.`);
-            if (!cmd.conf.hide_help || (cmd.conf.nsfw && !msg.channel.nsfw)) return;
-            embed.setDescription(`\`<>\`: obrigatório / \`[]\`: opcional`)
-            cmd.conf.aliases.length < 1 
-            ? embed.addFieldArray(`${msg.config.e_men._info} | Informações`, [[
-                `${msg.config.e_men._seta}Nome: ${firstUpperCase(cmd.help.name)}`,
-                `${msg.config.e_men._seta}Descrição: ${firstUpperCase(cmd.help.description.slice(0), '')}`,
-                `${msg.config.e_men._seta}Categoria: ${cmd.help.category === 'nsfw' ? 'NSFW': firstUpperCase(cmd.help.category)}`
-            ]])
-            : embed.addFieldArray(`${msg.config.e_men._info} | Informações`, [[
-                `${msg.config.e_men._seta}Nome: ${firstUpperCase(cmd.help.name)}`,
-                `${msg.config.e_men._seta}Aliases: ${cmd.conf.aliases.map(a => '`'+a+'`').join(', ')}`,
-                `${msg.config.e_men._seta}Descrição: ${firstUpperCase(cmd.help.description)}`,
-                `${msg.config.e_men._seta}Categoria: ${cmd.help.category === 'nsfw' ? 'NSFW': firstUpperCase(cmd.help.category)}`
-            ]])
-            embed.addFieldArray(`${msg.config.e_men.util} | Utilização`, [[
-                `${msg.config.e_men._seta}Form${cmd.help.usage.length === 1 ? 'a' : 'as'} de uso:`,
-                `${cmd.help.usage.map(a => `${msg.config.e_men._invisivel}• \`${msg.config.prefix+a}\``).join('\n')}`,
-                `${msg.config.e_men._seta}Acessível por: ${firstUpperCase(cmd.help.member)}`
-            ]])
-            embed.addFieldArray(`${msg.config.e_men.configs} | Configurações`, [[
-                `${msg.config.e_men._seta}DM: ${cmd.conf.guildOnly ? msg.config.e_men.desativado : msg.config.e_men.ativado}`,
-                `${msg.config.e_men._seta}Manutenção: ${cmd.conf.manu ? msg.config.e_men.ativado : msg.config.e_men.desativado}`,
-                `${msg.config.e_men._seta}Habilitado: ${cmd.conf.enable ? msg.config.e_men.ativado : msg.config.e_men.desativado}`,
-                `${msg.config.e_men._seta}NSFW: ${cmd.conf.nsfw ? msg.config.e_men.ativado : msg.config.e_men.desativado}`
-            ]])
-            embed.setFooter(`© ${msg.bot.user.username}`, msg.author.displayAvatarURL)
-            return msg.channel.send(embed);
+            if (cmd.conf.hide_help || (cmd.conf.nsfw && !msg.channel.nsfw)) return;
+            return msg.channel.send(            
+                embed.setDescription(`\`<>\`: obrigatório / \`[]\`: opcional`)
+                .addFieldArray(`${msg.config.e_men._info} | Informações`, [[
+                    `${msg.config.e_men._seta}Nome: ${firstUpperCase(cmd.help.name)}`,
+                    `${msg.config.e_men._seta}Aliases: ${cmd.conf.aliases ? cmd.conf.aliases.map(a => '`'+a+'`').join(', ') : 'sem aliases'}`,
+                    `${msg.config.e_men._seta}Descrição: ${firstUpperCase(cmd.help.description)}`,
+                    `${msg.config.e_men._seta}Categoria: ${cmd.help.category === 'nsfw' ? 'NSFW': firstUpperCase(cmd.help.category)}`,
+                    `${msg.config.e_men._seta}Créditos: ${cmd.help.credit ? '\n'+cmd.help.credit.map(a => `${msg.config.e_men._invisivel}• ${a}`).join('\n') : 'sem créditos'}`,
+                ]]).addFieldArray(`${msg.config.e_men.util} | Utilização`, [[
+                    `${msg.config.e_men._seta}Form${cmd.help.usage.length === 1 ? 'a' : 'as'} de uso:\n${msg.config.e_men._invisivel}• \`${msg.config.prefix+cmd.help.usage[0] || msg.config.prefix+cmd.help.name}\``,
+                    `${msg.config.e_men._seta}Acessível por: ${firstUpperCase(cmd.help.member)}`
+                ]]).addFieldArray(`${msg.config.e_men.configs} | Configurações`, [[
+                    `${msg.config.e_men._seta}DM: ${cmd.conf.guildOnly ? msg.config.e_men.desativado : msg.config.e_men.ativado}`,
+                    `${msg.config.e_men._seta}Manutenção: ${cmd.conf.manu ? msg.config.e_men.ativado : msg.config.e_men.desativado}`,
+                    `${msg.config.e_men._seta}Habilitado: ${cmd.conf.enable ? msg.config.e_men.ativado : msg.config.e_men.desativado}`,
+                    `${msg.config.e_men._seta}NSFW: ${cmd.conf.nsfw ? msg.config.e_men.ativado : msg.config.e_men.desativado}`
+                ]]).setFooter(`© ${msg.bot.user.username}`, msg.author.displayAvatarURL)
+            );
         }
     },
-    conf:{
-        aliases: ['help','comandos'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 30
-    },
+    conf:{ aliases: ['help','comandos'], enable: true, cooldown: 30 },
     help: {
         name: 'ajuda',
         description: 'veja todos os meus comandos',
-        usage: ['ajuda','ajuda [comando]'],
+        usage: ['ajuda [comando]', 'a'],
         member: 'usuários',
         category: 'informações'
     }

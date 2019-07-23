@@ -28,31 +28,23 @@ module.exports = {
             .setThumbnail('https://i.imgur.com/xxr2UBZ.png')
             .setTitleURL(`Jogo: ${data.name}`, `http://store.steampowered.com/app/${data.steam_appid}`)
             .setImage(`${tiny_image}`.replace('231','616').replace('87','353'))
-            .addField(`${msg.config.e_men._seta} Preço`, price, true)
-            .addField(`${msg.config.e_men._seta} Avaliação`, data.metacritic ? data.metacritic.score : '???', true)
-            .addField(`${msg.config.e_men._seta} Recomedações`, data.recommendations ? data.recommendations.total : '???', true)
-            .addField(`${msg.config.e_men._seta} Plataformas`, platforms.join(', ') || 'nenhuma', true)
-            .addField(`${msg.config.e_men._seta} Data de lançamento`, data.release_date ? data.release_date.date : '???', true)
-            .addField(`${msg.config.e_men._seta} Total de DLCs`, data.dlc ? data.dlc.length : 0, true)
-            .addField(`${msg.config.e_men._seta} Desenvolvedores`, data.developers ? data.developers.join(', ') || '???' : '???', true)
-            .addField(`${msg.config.e_men._seta} Editoras`, data.publishers ? data.publishers.join(', ') || '???' : '???', true)
+            .addField(`${msg.config.e_men._seta}Preço`, price, true)
+            .addField(`${msg.config.e_men._seta}Avaliação`, data.metacritic ? data.metacritic.score : '???', true)
+            .addField(`${msg.config.e_men._seta}Recomedações`, data.recommendations ? data.recommendations.total : '???', true)
+            .addField(`${msg.config.e_men._seta}Plataformas`, platforms.join(', ') || 'nenhuma', true)
+            .addField(`${msg.config.e_men._seta}Data de lançamento`, data.release_date ? data.release_date.date : '???', true)
+            .addField(`${msg.config.e_men._seta}Total de DLCs`, data.dlc ? data.dlc.length : 0, true)
+            .addField(`${msg.config.e_men._seta}Desenvolvedores`, data.developers ? data.developers.join(', ') || '???' : '???', true)
+            .addField(`${msg.config.e_men._seta}Editoras`, data.publishers ? data.publishers.join(', ') || '???' : '???', true)
         )
     },
-    conf:{
-        aliases: [],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 5
-    },
+    conf:{ enable: true, cooldown: 15 },
     help: {
        name: 'steam',
        description: 'pesquise por algum jogo na steam.',
        usage: ['steam <jogo>'],
        member: 'usuários',
-       category: 'game'
+       category: 'game',
+       credit: ['[Steam](https://store.steampowered.com/?l=portuguese)']
     }
 }

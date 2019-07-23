@@ -26,21 +26,13 @@ module.exports = {
             })
         })
     },
-    conf:{
-        aliases: [],
-        nsfw: true,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 60
-    },
+    conf:{ enable: true, cooldown: 60 },
     help: {
         name: 'p_manga',
         description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
-        usage: ['p_manga','p_manga --ero'],
+        usage: ['p_manga [--ero]','a'],
         member: 'usuários',
-        category: 'nsfw'
+        category: 'nsfw',
+        credit: ['[Nekos.life](https://nekos.life/)']
     }
 }

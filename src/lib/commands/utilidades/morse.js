@@ -33,21 +33,13 @@ module.exports = {
             '```'
         ].join('\n'))
     },
-    conf:{
-        aliases: [],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 5
-    },
+    conf:{ enable: true, cooldown: 15 },
     help: {
        name: 'morse',
        description: 'transforme uma frase em código morse.',
        usage: ['morse <mensagem>'],
        member: 'usuários',
-       category: 'utilidades'
+       category: 'utilidades',
+       credit: ['[BastionBot](https://github.com/TheBastionBot/Bastion)']
     }
 }

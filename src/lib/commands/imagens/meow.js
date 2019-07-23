@@ -26,21 +26,12 @@ module.exports = {
             })
         })
     },
-    conf:{
-        aliases: ['gato','gatinho'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 60
-    },
+    conf:{ aliases: ['gato','gatinho'], enable: true, cooldown: 60 },
     help: {
         name: 'meow',
         description: 'veja imagens de gatinhos',
-        usage: ['meow'],
         member: 'usuários',
-        category: 'imagens'
+        category: 'imagens',
+        credit: ['[Nekos.life](https://nekos.life/)']
     }
 }

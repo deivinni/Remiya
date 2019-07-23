@@ -21,7 +21,7 @@ module.exports = {
             } else {
                 await msg.channel.send(embed.setImage(image)).then(message => {
                     message.react(msg.config.e_id.reload_)
-                    const collector = message.createReactionCollector((r ,u) => (u.id != msg.bot.user.id && u.id == msg.author.id) && (r.emoji.id == msg.config.e_id.reload_), {time:3*60*1000});
+                    const collector = message.createReactionCollector((r ,u) => (u.id != msg.bot.user.id && u.id == msg.author.id) && (r.emoji.id == msg.config.e_id.reload_), {time:60*1000});
                     collector.on('collect', async (r) => {
                         switch (r.emoji.id) {
                             case msg.config.e_id.reload_:
@@ -34,21 +34,12 @@ module.exports = {
                     setTimeout(() => {
                         message.clearReactions();
                         message.edit(embed.setDescription(''));
-                    }, 3*60*1000)
+                    }, 60*1000)
                 })
             }
         }
     },
-    conf:{
-        aliases: [],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 3
-    },
+    conf:{ enable: true, cooldown: 60 },
     help: {
         name: 'reddit',
         description: 'pesquise por imagens no reddit',

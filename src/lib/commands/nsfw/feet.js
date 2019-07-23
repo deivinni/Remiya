@@ -26,21 +26,13 @@ module.exports = {
             })
         })
     },
-    conf:{
-        aliases: [],
-        nsfw: true,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 60
-    },
+    conf:{ enable: true, cooldown: 60 },
     help: {
         name: 'feet',
         description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
-        usage: ['feet','feet --gif','feet --ero'],
+        usage: ['feet [--gif | --ero]', 'a'],
         member: 'usuários',
-        category: 'nsfw'
+        category: 'nsfw',
+        credit: ['[Nekos.life](https://nekos.life/)']
     }
 }

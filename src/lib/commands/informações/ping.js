@@ -5,17 +5,9 @@ module.exports = {
           , select_ping = msg.args[0] ? shard_ping[parseInt(args_ping)] ? parseInt(args_ping) : msg.bot.shard.id : msg.bot.shard.id
           , final_ping = shard_ping[select_ping];
         msg.channel.send(`${msg.config.e_men.ping} \`|\` ${msg.author}, minha latência no shard \`${select_ping+1}\` é \`${parseInt(final_ping)}\` ms!`);
+        //msg.channel.send(`${msg.config.e_men.ping} \`|\` ${msg.author}, minha latência é \`${Math.ceil(msg.bot.ping)}\` ms!`);
     },
-    conf: {
-        aliases: ['latency'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 5
-    },
+    conf:{ aliases: ['latency'], enable: true, hide_help: true, cooldown: 10 },
     help: {
         name: 'ping',
         description: 'veja a minha latência',

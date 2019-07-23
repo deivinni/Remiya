@@ -11,21 +11,13 @@ module.exports = {
             )
         })
     },
-    conf:{
-        aliases: ['abraçar'],
-        nsfw: false,
-        guildOnly: true,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 3
-    },
+    conf:{ aliases: ['abraçar'], enable: true, cooldown: 10 },
     help: {
         name: 'hug',
         description: 'abraçe alguém do servidor',
         usage: ['hug @usuário'],
         member: 'usuários',
-        category: 'imagens'
+        category: 'imagens',
+        credit: ['[Nekos.life](https://nekos.life/)']
     }
 }

@@ -10,21 +10,12 @@ module.exports = {
         })
         msg.channel.stopTyping(true);
     },
-    conf:{
-        aliases: [],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 10
-    },
+    conf:{ enable: true, cooldown: 10 },
     help: {
        name: 'captcha',
        description: 'faça um captcha com sua foto.',
-       usage: ['captcha'],
        member: 'usuários',
-       category: 'imagens'
+       category: 'imagens',
+       credit: ['[NekoBot API](https://nekobot.xyz/)']
     }
 }

@@ -6,16 +6,7 @@ module.exports = {
         .then(() => member.setDeaf(false))
         .catch(() => msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, não foi possível desensurdecer este usuário.`))
     },
-    conf:{
-        aliases: [],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 3
-    },
+    conf:{ enable: true, cooldown: 30 },
     help: {
         name: 'undeaf',
         description: 'ative o audio de alguma pessoa',

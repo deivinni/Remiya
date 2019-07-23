@@ -32,20 +32,11 @@ module.exports = {
             )
         }
     },
-    conf: {
-        aliases: ['infoserver', 'si'],
-        nsfw: false,
-        ownerOnly: false,
-        guildOnly: true,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 5
-    },
+    conf:{ aliases: ['infoserver', 'si'], enable: true, cooldown: 10 },
     help:{
         name: 'serverinfo',
         description: 'veja as informações do servidor',
-        usage: ['serverinfo','serverinfo --cargos'],
+        usage: ['serverinfo [--cargos]', 'a'],
         member: 'usuários',
         category: 'informações'
     }

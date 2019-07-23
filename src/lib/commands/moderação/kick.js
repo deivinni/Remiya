@@ -6,16 +6,7 @@ module.exports = {
         .then(() => member.kick({reason: msg.args.slice(1).join(' ') || 'Motivo não especificado.'}))
         .catch(() => msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, não foi possível expulsar este usuário.`))
     },
-    conf:{
-        aliases: [],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 60
-    },
+    conf:{ enable: true, cooldown: 30 },
     help: {
         name: 'kick',
         description: 'expulse alguém do servidor.',

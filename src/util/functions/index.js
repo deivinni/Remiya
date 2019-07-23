@@ -1,5 +1,5 @@
 module.exports = {
-    RemiyaEmbed: require('./RemiyaEmbed'),
-    firstUpperCase: require('./firstUpperCase'),
-    Database: require('./database')
+    RemiyaEmbed: require('./RemiyaEmbed.js'),
+    firstUpperCase: require('./firstUpperCase.js'),
+    shortenerText: require('./shortenerText.js')
 }

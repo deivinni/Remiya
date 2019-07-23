@@ -12,21 +12,13 @@ module.exports = {
         })
         msg.channel.stopTyping(true);
     },
-    conf:{
-        aliases: ['tweet'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 10
-    },
+    conf:{ aliases: ['tweet'], enable: true, cooldown: 10 },
     help: {
        name: 'twitter',
        description: 'gera uma imagem com alguma mensagem no Twitter.',
        usage: ['twitter <TwitterUsername> <mensagem>'],
        member: 'usuários',
-       category: 'diversão'
+       category: 'diversão',
+       credit: ['[NekoBot API](https://nekobot.xyz/)']
     }
 }

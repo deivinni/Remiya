@@ -26,21 +26,13 @@ module.exports = {
             })
         })
     },
-    conf:{
-        aliases: ['bj'],
-        nsfw: true,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 60
-    },
+    conf:{ aliases: ['bj'], enable: true, cooldown: 60 },
     help: {
         name: 'blowjob',
         description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
-        usage: ['blowjob','blowjob --gif'],
+        usage: ['blowjob [--gif]','a'],
         member: 'usuários',
-        category: 'nsfw'
+        category: 'nsfw',
+        credit: ['[Nekos.life](https://nekos.life/)']
     }
 }

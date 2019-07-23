@@ -11,21 +11,13 @@ module.exports = {
         })
         msg.channel.stopTyping(true);
     },
-    conf:{
-        aliases: [],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 10
-    },
+    conf:{ enable: true, cooldown: 10 },
     help: {
        name: 'threats',
        description: 'mostre as 3 maiores ameaças do planeta',
        usage: ['threats [imagem]'],
        member: 'usuários',
-       category: 'imagens'
+       category: 'imagens',
+       credit: ['[NekoBot API](https://nekobot.xyz/)']
     }
 }

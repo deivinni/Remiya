@@ -10,21 +10,12 @@ module.exports = {
         })
         msg.channel.stopTyping(true);
     },
-    conf:{
-        aliases: [],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 10
-    },
+    conf:{ enable: true, cooldown: 10 },
     help: {
        name: 'lolice',
-       description: 'se torne uma ',
-       usage: ['lolice'],
+       description: 'se torne uma loli policial',
        member: 'usuários',
-       category: 'imagens'
+       category: 'imagens',
+       credit: ['[NekoBot API](https://nekobot.xyz/)']
     }
 }

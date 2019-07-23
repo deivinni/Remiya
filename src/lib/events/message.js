@@ -8,7 +8,11 @@ module.exports = async (bot, msg) => {
     const args = msg.content.slice(config.prefix.length).trim().split(/\s+/g);
     const comando = args.shift().toLowerCase();
     const cmd = bot.commands.get(comando) || bot.commands.get(bot.aliases.get(comando));
-    Object.defineProperties(msg, { 'args': { value: args }, 'config': { value: config }, 'bot': { value: bot } });
+    Object.defineProperties(msg, {
+        'args':   { value: args   },
+        'config': { value: config },
+        'bot':    { value: bot    }
+    });
     if (cmd) {
         if (cmd.conf.ownerOnly && ![config.owner_id[0]].some(id => msg.author.id == id))
             return msg.channel.send(`${config.e_men.errado} \`|\` ${msg.author}, apenas meu criador pode usar este comando.`);
@@ -20,8 +24,6 @@ module.exports = async (bot, msg) => {
             return msg.channel.send(`${config.e_men.desativado} \`|\` ${msg.author}, este comando esta desabilitado.`);
         if ((cmd.conf.nsfw && !msg.channel.nsfw) && (cmd.conf.nsfw && msg.channel.type != 'dm'))
             return msg.channel.send(`🔞 \`|\` ${msg.author}, você deve estar um chat \`NSFW\` para usar este comando.`);
-        //if (cmd.conf.premium && user.premium == false)
-        //    return msg.channel.send(`<:premium_:601887751431913490> \`|\` ${msg.author}, este comando só pode ser usuários \`premium\`!`);
         if (!bot.cooldowns.get(cmd.help.name)) 
             bot.cooldowns.set(cmd.help.name, new (require('discord.js').Collection)());
         const now = Date.now();
@@ -38,7 +40,10 @@ module.exports = async (bot, msg) => {
         setTimeout(() => timestamps.delete(msg.author.id), cooldownAmount);
         try { cmd.run(msg) } catch (e) {
             msg.channel.send(`${config.e_men.errado} \`|\` ${msg.author}, ocorreu um erro inesperado ao executar este comando. Tente novamente mais tarde!`)
-            bot.guilds.get('586610890288136202').channels.get('588804651328208907').send(`\nComando: ${comando}\nUsuário: ${msg.author.tag}\nErro:\n\`\`\`js\n${e.stack}\`\`\``) 
+            bot.guilds.get('586610890288136202').channels.get('588804651328208907').send([
+                `Comando: ${comando}`,`Usuário: ${msg.author.tag}`,
+                `Erro:`,'```js',`${e.stack}`,'```'
+            ].join('\n'))
         }
     } else {
         if (msg.content != config.prefix) {

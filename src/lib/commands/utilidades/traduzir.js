@@ -15,21 +15,13 @@ module.exports = {
             )
         }).catch(() => msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, você inseriu um idioma inválido. Tente colocar a abreviação dele, exemplo: \`Inglês\` -> \`en\``));
     },
-    conf:{
-        aliases: ['translate'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 8
-    },
+    conf:{ aliases: ['translate'], enable: true, cooldown: 10 },
     help: {
         name: 'traduzir',
         description: 'traduza alguma mensagem',
-        usage: ['traduzir <língua para traduzir> <mensagem>'],
+        usage: ['traduzir <odioma> <mensagem>'],
         member: 'usuários',
-        category: 'utilidades'
+        category: 'utilidades',
+        credit: ['[Google Tradutor](https://translate.google.com)']
     }
 }

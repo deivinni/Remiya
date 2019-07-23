@@ -11,21 +11,13 @@ module.exports = {
         })
         msg.channel.stopTyping(true);
     },
-    conf:{
-        aliases: ['trumptweet'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 10
-    },
+    conf:{ aliases: ['trumptweet'], enable: true, cooldown: 10 },
     help: {
         name: 'trump',
         description: 'faça o Donald Trump twittar algo.',
         usage: ['trump <mensagem>'],
         member: 'usuários',
-        category: 'diversão'
+        category: 'diversão',
+        credit: ['[NekoBot API](https://nekobot.xyz/)']
     }
 }

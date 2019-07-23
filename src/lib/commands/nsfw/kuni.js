@@ -25,21 +25,12 @@ module.exports = {
             })
         })
     },
-    conf:{
-        aliases: [],
-        nsfw: true,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 60
-    },
+    conf:{ enable: true, cooldown: 60 },
     help: {
         name: 'kuni',
         description: 'veja uns hentais ( ͡° ͜ʖ ͡°)',
-        usage: ['kuni'],
         member: 'usuários',
-        category: 'nsfw'
+        category: 'nsfw',
+        credit: ['[Nekos.life](https://nekos.life/)']
     }
 }

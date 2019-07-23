@@ -10,20 +10,11 @@ module.exports = {
             .setImage(avatar)
         )
     },
-    conf: {
-        aliases: ['pic','foto'],
-        nsfw: false,
-        ownerOnly: false,
-        guildOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 5
-    },
+    conf: { aliases: ['pic','foto'], enable: true, cooldown: 10 },
     help: {
         name: 'avatar',
         description: 'veja o avatar de alguém do servidor',
-        usage: ['avatar', 'avatar @usuário'],
+        usage: ['avatar [@usuário]','a'],
         category: 'utilidades',
         member: 'usuários'
     }

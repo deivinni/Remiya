@@ -27,21 +27,13 @@ module.exports = {
             })
         })
     },
-    conf:{
-        aliases: [],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 60
-    },
+    conf:{ enable: true, cooldown: 60 },
     help: {
         name: 'neko',
         description: 'veja umas imagens de nekos',
-        usage: ['neko','neko --gif'],
+        usage: ['neko [--gif]'],
         member: 'usuários',
-        category: 'imagens'
+        category: 'imagens',
+        credit: ['[Nekos.life](https://nekos.life/)']
     }
 }

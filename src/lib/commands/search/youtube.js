@@ -1,5 +1,5 @@
 const moment = require('moment'); moment.locale('pt-BR');
-const { RemiyaEmbed } = require('../../../util/functions/index');
+const { RemiyaEmbed, shortenerText } = require('../../../util/functions/index');
 const youtube = new (require('simple-youtube-api'))(process.env.YOUTUBE_KEY);
 
 module.exports = {
@@ -19,26 +19,18 @@ module.exports = {
                 .addFieldArray(`${msg.config.e_men.add} | Informações adicionais`, [[
                     `${msg.config.e_men._seta}Canal: ${r[0].channel.title} - [Link do canal](${r[0].channel.url})`,
                     `${msg.config.e_men._seta}Link: [clique aqui](${r[0].shortURL})`,
-                    `${msg.config.e_men._seta}Descrição:\n${r[0].description}`
+                    `${msg.config.e_men._seta}Descrição:\n${shortenerText(r[0].description)}`
                 ]])
             )
         })
     },
-    conf:{
-        aliases: ['yt'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 10
-    },
+    conf:{ aliases: ['yt'], enable: true, cooldown: 10 },
     help: {
         name: 'youtube',
         description: 'pesquise um vídeo no youtube',
-        usage: ['youtube <nome de vídeo>'],
+        usage: ['youtube <vídeo>'],
         member: 'usuários',
-        category: 'search'
+        category: 'search',
+        credit: ['[YouTube](https://www.youtube.com)']
     }
 }

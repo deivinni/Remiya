@@ -24,21 +24,12 @@ module.exports = {
             }
         }
     },
-    conf: {
-        aliases: ['recarregar'],
-        nsfw: false,
-        ownerOnly: true,
-        guildOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: false,
-        cooldown: 3
-    },
+    conf: { aliases: ['recarregar'], enable: true, hide_help: true, },
     help: {
         name: 'reload',
         description: 'recarregue um comando sem ter que me reiniciar',
         member: 'criador',
-        usage: ['reload','reload [pasta]','reload [pasta] [comando]'],
+        usage: ['reload [pasta] [comando]','a'],
         category: 'owner',
     }
 }

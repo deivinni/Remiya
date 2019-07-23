@@ -9,16 +9,7 @@ module.exports = {
             .setDescription(users.join(' \`|\` '))
         )
     },
-    conf:{
-        aliases: ['discriminator','discriminador'],
-        nsfw: false,
-        guildOnly: false,
-        ownerOnly: false,
-        manu: false,
-        enable: true,
-        hide_help: true,
-        cooldown: 5
-    },
+    conf:{ aliases: ['discriminator','discriminador'], enable: true, cooldown: 5 },
     help: {
        name: 'discrim',
        description: 'veja os usuários com um determinado discriminador',
