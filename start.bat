@@ -1,3 +1,3 @@
 git add .
-git commit -am "Sei lá."
+git commit -am "qualquer coisa"
 git push heroku master
