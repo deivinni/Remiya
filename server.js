@@ -1,5 +1,4 @@
 require('ylenv').load();
-//module.exports = require('./src/main.js');
 const { ShardingManager } = require('discord.js');
 const shards = new ShardingManager('./src/main.js', {
     totalShards: 'auto',

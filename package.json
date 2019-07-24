@@ -24,6 +24,7 @@
         "color-convert": "^2.0.0",
         "discord.js": "^11.5.1",
         "fs": "0.0.1-security",
+        "jikanjs": "^0.7.0",
         "jimp": "^0.6.4",
         "kitsu.js": "^2.0.0",
         "moment": "^2.24.0",
