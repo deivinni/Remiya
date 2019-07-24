@@ -16,6 +16,5 @@ module.exports = {
         VERMELHO: 0xDB5E5E,
         VERDE: 0x2DF74C,
         AZUL: 0x2D3DF7,
-        KITSU: 0xFF7F42
     }
 }

@@ -10,8 +10,8 @@ module.exports = {
                 new RemiyaEmbed(msg.author)
                 .setThumbnail('https://i.redd.it/zurtc1epmh111.gif')
                 .setAuthor('Tradutor', msg.bot.user.displayAvatarURL, 'https://translate.google.com/')
-                .addField('📥 | Mensagem original', `\`\`\`\n${msg.args.slice(1).join(' ')}\`\`\``)
-                .addField('📤 | Mensagem traduzida', `\`\`\`\n${res.text}\`\`\``)
+                .addFieldArray('📥 | Mensagem original', [['```',`${msg.args.slice(1).join(' ')}`,'```']])
+                .addField('📤 | Mensagem traduzida', [['```\n',`${res.text}`,'```']])
             )
         }).catch(() => msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, você inseriu um idioma inválido. Tente colocar a abreviação dele, exemplo: \`Inglês\` -> \`en\``));
     },
