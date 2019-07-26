@@ -19,7 +19,7 @@ module.exports = {
                 msg.channel.stopTyping(true);
             })
         } catch (e) {
-            msg.channel.send(`${config.e_men.errado} \`|\` ${msg.author}, ocorreu um erro inesperado ao executar este comando. Tente novamente mais tarde!`);
+            msg.channel.send(`${msg.config.e_men.errado} \`|\` ${msg.author}, ocorreu um erro inesperado ao executar este comando. Tente novamente mais tarde!`);
         }
     },
     conf:{ aliases: ['djs'], enable: true, cooldown: 5 },
